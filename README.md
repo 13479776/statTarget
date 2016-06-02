@@ -12,8 +12,9 @@ This package was developed for statistical analysis of metabolomic data. Feature
 Requirements
 -----------------
 
-R >= 3.3.0 are officially supported.
-Imports: randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,rrcov,RGtk2,pls
+Dependent on R (>= 3.3.0)
+Packages should be installed:
+randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,rrcov,RGtk2,pls
 
 Author
 -----------------
