@@ -1,0 +1,17 @@
+Package: statTarget
+Type: Package
+Title: Univariate and multivariate analysis of the targeted metabolites
+Version: 1.0.1
+Date: 2016-05-03
+Author: Hemi Luan
+Maintainer: Hemi Luan <hemi.luan@gmail.com>
+Depends: R (>= 3.3.0)
+Imports:
+        car,randomForest,plyr,LMGene,pracma,pROC,robustbase,pls,grDevices,graphics,stats,utils,rrcov,pdist
+Description: A high throughput and comprehensive tool for statistic analysis of targeted metabolite.The statTarget was developed for statistical analysis of metabolomic data. Features of the package includes data preprocessing, data descriptions, PCA, PLSDA, OPLSDA, VIP, ROC, random forest, odd ratio, student t test, shapiro wilk normality test and mann whitney tests. data preprocessing includes 80 precent rule, log transformation, normalization. data descriptions includes mean value, median value, sum, quartile, standard derivatives, etc.
+License: LGPL-1, LGPL-2
+biocViews: Metabolomics, MassSpectrometry
+RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-05-26 09:45:40 UTC; BU1
+Built: R 3.4.0; ; 2016-05-26 09:55:15 UTC; windows

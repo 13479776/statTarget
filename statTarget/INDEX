@@ -1,0 +1,10 @@
+RandomF                 RandomF provide the random forest function.
+bStatX                  bStatX provide the basic data description for
+                        each features
+missvalue               Miss value will be replaced with median value.
+odd.ratio               this function provide the odd.ratio value for
+                        metabolomics data or others.
+rule80                  this function provide the 80 percent rule for
+                        the missing value correction
+statTarget              statTarget provide the basic data analysis for
+                        metabolomics data or others.
