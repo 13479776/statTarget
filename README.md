@@ -18,8 +18,9 @@ randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,r
 
 Usage
 -----------------
-|Download the package statTarget_win_1.0.1.zip under the window systerm.
-|install.package("statTarget_win_1.0.1.zip")
+Download the package statTarget_win_1.0.1.zip under the window systerm.
+-----------------
+install.package("statTarget_win_1.0.1.zip")
 
 Author
 -----------------
