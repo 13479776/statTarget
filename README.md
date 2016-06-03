@@ -16,6 +16,8 @@ Dependent on R (>= 3.3.0)
 Packages should be installed:
 randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,rrcov,RGtk2,pls
 
+Steps and Data Frame
+-----------------
 ![github](https://github.com/13479776/Picture/blob/master/statTarget1.png "13479776")
 ![github](https://github.com/13479776/Picture/blob/master/statTarget2.png "13479776")
 
