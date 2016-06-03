@@ -16,6 +16,11 @@ Dependent on R (>= 3.3.0)
 Packages should be installed:
 randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,rrcov,RGtk2,pls
 
+Usage
+-----------------
+Download the package statTarget_win_1.0.1.zip under the window systerm.
+install.package("statTarget_win_1.0.1.zip")
+
 Author
 -----------------
 
