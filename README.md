@@ -43,7 +43,7 @@ Steps and Data Frame
 
 Usage
 -----------------
-Download the package statTarget_win_1.0.1.zip under the window PC.
+Download the package statTarget_win_1.2.0.zip under the window PC.
 
 install.package("statTarget_win_1.2.0.zip")
 
