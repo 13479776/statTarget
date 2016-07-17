@@ -12,8 +12,7 @@ signal correction (QC-RLSC) that is a widely accepted method for quality con-
 trol based signal correction and integration of metabolomic data from multiple
 analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
-statTarget - Shift Correction provide QC-RLSC algorithm that t
-the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additonally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overtting of the observed data, when
+statTarget - Shift Correction provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additonally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overtting of the observed data, when
 the QCspan was set at 0.
 
 statTarget - Statistical Analysis provide features including Data pre-
@@ -32,7 +31,7 @@ Biomarkers analysis for Clinical research : ROC, Odd ratio.
 Requirements
 -----------------
 
-Dependent on R (>= 3.3.0), GTK2
+Dependent on R (>= 3.3.0), gWidgets2
 
 Packages should be installed:
 randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,rrcov,RGtk2,pls
