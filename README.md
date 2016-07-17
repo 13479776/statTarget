@@ -51,7 +51,7 @@ http://ftp.gnome.org/pub/gnome/binaries/win64/gtk+/2.22/ .
 
 3 install.package("statTarget_win_1.2.0.zip")
 
-4 Input data (The example data could be found in the package {PATH:./statTarget_v2/inst/})
+4 Input data (The example data could be found in the package {PATH:./statTarget_1.2.0/inst/})
 
 Author
 -----------------
