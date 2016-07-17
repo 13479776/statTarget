@@ -35,7 +35,7 @@ Usage
 
 1 Download gtk+-bundle 2.22.1-20101229 win64.zip from http://ftp.gnome.org/pub/gnome/binaries/win64/gtk+/2.22/ .
 
-2 If you do not install the R software, the you can download R from https://www.r-project.org
+2 If you did not install the R software yet,you can download R from https://www.r-project.org
 
 3 Download the package statTarget_win_1.2.0.zip under the window PC.
 
