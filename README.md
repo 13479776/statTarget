@@ -39,7 +39,7 @@ randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,r
 Steps and Data Frame
 -----------------
 ![github](https://github.com/13479776/Picture/blob/master/main_gui.jpg "13479776")
-![github](https://github.com/13479776/Picture/blob/master/statTarget2.png "13479776")
+
 
 Usage
 -----------------
@@ -50,6 +50,8 @@ http://ftp.gnome.org/pub/gnome/binaries/win64/gtk+/2.22/ .
 2 Download the package statTarget_win_1.2.0.zip under the window PC.
 
 3 install.package("statTarget_win_1.2.0.zip")
+
+4 Input data (The example data could be found in the package {PATH:./statTarget_v2/inst/})
 
 Author
 -----------------
