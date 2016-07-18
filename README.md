@@ -27,7 +27,7 @@ randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,r
 
 Steps and Data Frame
 -----------------
-![github](https://github.com/13479776/Picture/blob/master/main_gui.jpg "13479776")
+![github](https://github.com/13479776/Picture/blob/master/main_gui7.jpg "13479776")
 
 
 Usage
