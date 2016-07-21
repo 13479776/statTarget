@@ -20,10 +20,10 @@ Biomarkers analysis for Clinical research : ROC, Odd ratio.
 Requirements
 -----------------
 
-Dependent on R (>= 3.3.0), gWidgets2
+Dependent on R (>= 3.3.0), 
 
 Packages should be installed:
-randomForest,plyr,LMGene,pracma,pROC,robustbase,grDevices,graphics,stats,utils,rrcov,RGtk2,pls
+randomForest,plyr,pROC,rrcov,RGtk2,pls,gWidgets2,gWidgets2RGtk2,pdist,impute
 
 Steps and Data Frame
 -----------------
@@ -33,15 +33,16 @@ Steps and Data Frame
 Usage
 -----------------
 
-1 Download gtk+-bundle 2.22.1-20101229 win64.zip from http://ftp.gnome.org/pub/gnome/binaries/win64/gtk+/2.22/ .
+1 If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
 
-2 If you did not install the R software yet,you can download R from https://www.r-project.org
+2 Install the package "impute" in the Biocondcutor.
+  Copy this code into R and install the impute
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("impute")
 
-3 Download the package statTarget_win_1.2.0.zip under the window PC.
+3 install.packages("statTarget")
 
-4 install.package("statTarget_win_1.2.0.zip")
-
-5 Input data and run (The example data could be found in the package {PATH:./statTarget_1.2.0/inst/})
+4 Input data and run
 
 Author
 -----------------
