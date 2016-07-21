@@ -37,7 +37,7 @@ Usage
 
 2 Install the package "statTarget"
   
-  Copy this code into R and install the impute
+  Copy this code into R 
   
   > source("https://bioconductor.org/biocLite.R")
   
