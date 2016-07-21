@@ -35,15 +35,15 @@ Usage
 
 1 If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
 
-2 Install the package "statTarget" for Windows PC
-  
-  Copy this code into R 
+2 Install the package "statTarget" at the CRAN
+ 
+  For Windows PC, copy this code into R 
   
   > source("https://bioconductor.org/biocLite.R")
   
   > biocLite("impute")
 
-  > install.packages("statTarget")
+  > install.packages("statTarget") 
 
 4 Input data and run
 
