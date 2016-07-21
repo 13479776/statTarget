@@ -35,15 +35,15 @@ Usage
 
 1 If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
 
-2 Install the package "impute" in the Biocondcutor.
+2 Install the package "statTarget"
   
   Copy this code into R and install the impute
   
-  source("https://bioconductor.org/biocLite.R")
+  > source("https://bioconductor.org/biocLite.R")
   
-  biocLite("impute")
+  > biocLite("impute")
 
-3 install.packages("statTarget")
+  > install.packages("statTarget")
 
 4 Input data and run
 
