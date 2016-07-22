@@ -44,6 +44,16 @@ Usage
   > biocLite("impute")
 
   > install.packages("statTarget") 
+  
+  For mac PC, XQuartz should be installed. Download it from https://www.xquartz.org
+  
+  Copy this code into R
+  
+  > source("https://bioconductor.org/biocLite.R")
+  
+  > biocLite("impute")
+
+  > install.packages("statTarget") 
 
 4 Input data and run
 
