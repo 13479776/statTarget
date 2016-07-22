@@ -2,17 +2,17 @@
 ==============
 Description
 -----------------
-A graphical user interface, easy to use tool provide quality control based sig nal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
+A graphical user interface, easy to use tool provide quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
 
 Link: https://cran.r-project.org/web/packages/statTarget/
 
 The main GUI of statTarget has two basic components. The first is shift correction. It includes quality control-based robust LOESS signal correction (QC-RLSC) that is a widely accepted method for quality con trol based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
-statTarget - Shift Correction provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additonally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overtting of the observed data, when the QCspan was set at 0.
+statTarget - Shift Correction provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
 
 statTarget - Statistical Analysis provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
 
-Data preprocessing : 80-precent rule, log transformation, KNN imputation, Median imputation and Minimum values imputation.
+Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Median imputation and Minimum values imputation.
 Data descriptions : Mean value, Median value, Sum, Quartile, Standard derivatives, etc.
 Multivariate statistics analysis : PCA, PLSDA, OPLSDA, VIP, Random forest.
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests.
