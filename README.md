@@ -4,7 +4,7 @@ Description
 -----------------
 A graphical user interface, easy to use tool provide quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
 
-Link: https://cran.r-project.org/web/packages/statTarget/
+Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
 The main GUI of statTarget has two basic components. The first is shift correction. It includes quality control-based robust LOESS signal correction (QC-RLSC) that is a widely accepted method for quality con trol based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
@@ -18,6 +18,7 @@ Multivariate statistics analysis : PCA, PLSDA, OPLSDA, VIP, Random forest.
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests.
 Biomarkers analysis for Clinical research : ROC, Odd ratio.
 
+The statTarget tutorial could be [downloaded](https://github.com/13479776/Picture/blob/master/statTarget%20tutorial%20.pptx "statTarget tutorial .pptx").
 
 Requirements
 -----------------
