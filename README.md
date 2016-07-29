@@ -18,7 +18,7 @@ Multivariate statistics analysis : PCA, PLSDA, OPLSDA, VIP, Random forest.
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests.
 Biomarkers analysis for Clinical research : ROC, Odd ratio.
 
-The statTarget tutorial could be [downloaded](https://github.com/13479776/Picture/blob/master/statTarget%20tutorial%20.pptx "statTarget tutorial .pptx").
+ [Download](https://github.com/13479776/Picture/blob/master/statTarget%20tutorial%20.pptx "statTarget tutorial .pptx") the statTarget tutorial.
 
 Requirements
 -----------------
