@@ -30,7 +30,7 @@ randomForest,plyr,pROC,rrcov,RGtk2,pls,gWidgets2,gWidgets2RGtk2,pdist,impute
 
 Steps and Data Frame
 -----------------
-![github](https://github.com/13479776/Picture/blob/master/main_gui8.jpg ,"13479776")
+![github](https://github.com/13479776/Picture/blob/master/main_gui8.jpg,"13479776")
 
 
 Usage
