@@ -16,14 +16,9 @@ Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Media
 Data descriptions : Mean value, Median value, Sum, Quartile, Standard derivatives, etc.
 Multivariate statistics analysis : PCA, PLSDA, OPLSDA, VIP, Random forest.
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests. 
+
 Biomarkers analysis for Clinical research : ROC, Odd ratio.
  
-
-Windows binaries: [statTarget_1.2.2.zip](ftp://cran.r-project.org/pub/R/bin/windows/contrib/3.4/statTarget_1.2.2.zip "statTarget_1.2.2.zip") 
-
-OS X Mavericks binaries: [statTarget_1.2.2.tgz](ftp://cran.r-project.org/pub/R/bin/macosx/mavericks/contrib/3.3/statTarget_1.2.2.tgz "statTarget_1.2.2.tgz") 
-
-
 Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/statTarget%20tutorial%20.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/statTarget/blob/master/Data_example.zip "Data_example.zip") .
 
 
