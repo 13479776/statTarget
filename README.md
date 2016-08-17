@@ -50,6 +50,8 @@ Usage
 
   > install.packages("statTarget") 
   
+  > library(statTarget) # Execute statTarget
+  
   For mac PC, XQuartz should be installed. Download it from https://www.xquartz.org
   
   Copy this code into R
@@ -59,8 +61,10 @@ Usage
   > biocLite("impute")
 
   > install.packages("statTarget") 
+  
+  > library(statTarget) # Execute statTarget
 
-4 Input data and run
+4 Input data and run (See the [example data](https://github.com/13479776/statTarget/blob/master/Data_example.zip "Data_example.zip"))
 
 Author
 -----------------
