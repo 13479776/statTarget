@@ -14,7 +14,7 @@ statTarget - Statistical Analysis provide features including Data preprocessing,
 
 Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Median imputation and Minimum values imputation.
 Data descriptions : Mean value, Median value, Sum, Quartile, Standard derivatives, etc.
-Multivariate statistics analysis : PCA, PLSDA, OPLSDA, VIP, Random forest.
+Multivariate statistics analysis : PCA, PLSDA, VIP, Random forest.
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests. 
 
 Biomarkers analysis : ROC, Odd ratio, P-value, and Volcano plot.
