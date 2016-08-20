@@ -31,7 +31,7 @@ function(file){
     fin=ncol(sorted)-1
     we <- matrix(rep(NA, fin))
     for (q in 1:fin) {
-    we[q,] <- t.test(I[,q],J[,q],var.equal=F,conf.level=.95,alternative="two.sided")$p.value
+    we[q,] <- t.test(I[,q],J[,q],var.equal=FALSE,conf.level=.95,alternative="two.sided")$p.value
     }
     welch.ij=paste("WelchTest_",i,"vs",j, ".csv", sep="")
     assign(welch.ij,we)
