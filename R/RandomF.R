@@ -112,7 +112,7 @@ RandomF <- function(file,nvarRF) {
         pdf(Giniplot)
         orderindex <- apply(dat,2,median)
         datindex <- cbind(orderindex,t(dat))
-        sort.dat <- datindex[order(datindex[,1], na.last=NA, decreasing = T),]
+        sort.dat <- datindex[order(datindex[,1], na.last=NA, decreasing = TRUE),]
         sort.dat <- t(sort.dat[,-1]) 
         sort.range <- sort.dat[,1:nvarRF]
         sort.datFilter <- flipdim_sT(sort.range, 2)
