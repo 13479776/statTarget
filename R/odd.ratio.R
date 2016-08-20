@@ -5,7 +5,6 @@
 #' @references 
 #' J Can Acad Child Adolesc Psychiatry. 2010 Aug; 19(3): 227???229. Magdalena Szumilas
 #' @usage odd.ratio(file)
-#' @export
 odd.ratio <- function(file) {
   pwdfile = paste(getwd(), "/Univariate/DataTable.csv", sep = "")
   file = pwdfile
