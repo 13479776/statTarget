@@ -2,7 +2,6 @@
 #' @param degree is the group factor
 #' @param mv is th data file
 #' @usage  missvalue(mv, degree)
-#' @export
 missvalue <- function(mv,degree) {
   for (i in 1:dim(mv)[1]){  
     for(j in 2:dim(mv)[2]){
