@@ -9,7 +9,6 @@
 #' @param silt shows the number of permutation times
 #' @param pcax shows principal components in PCA model for the x-axis.
 #' @param pcay shows principal components in PCA model for the y-axis.
-#' @export
 statAnalysis <- function (file, Frule = 0.8,imputeM = "KNN", glog = TRUE, test.multi=TRUE, nvarRF =10, scaling = "Pareto",silt = 500, pcax = 1, pcay = 2) {
   dirout.uni = paste(getwd(), "/statTarget/", sep = "")
   dir.create(dirout.uni)
