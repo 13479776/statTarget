@@ -1,0 +1,21 @@
+Package: statTarget
+Type: Package
+Title: Statistical Analysis of Metabolite Profile
+Version: 1.2.2
+Date: 2016-07-014
+Author: Hemi Luan
+Maintainer: Hemi Luan <hemi.luan@gmail.com>
+Depends: R (>= 3.3.0)
+Imports:
+        randomForest,plyr,pdist,pROC,utils,grDevices,graphics,stats,rrcov,pls,impute,gWidgets2,gWidgets2RGtk2
+Suggests: testthat
+Description: An easy to use tool provides a graphical user interface for quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
+License: GPL (>= 2)
+URL: https://github.com/13479776/statTarget
+biocViews: Metabolomics, MassSpectrometry
+RoxygenNote: 5.0.1
+LazyData: true
+NeedsCompilation: no
+Packaged: 2016-07-20 00:18:52 UTC; Hees
+Repository: CRAN
+Date/Publication: 2016-07-20 09:46:08
