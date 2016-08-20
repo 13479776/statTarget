@@ -17,7 +17,7 @@ shiftCor = function(samPeno,samFile,Frule = 0.8,QCspan = 0.75, degree = 2,impute
   #degree = "0","1","2"
   samPeno <- read.csv(samPeno, header=TRUE, check.names = F,stringsAsFactors = F)
   samPeno <- as.data.frame(samPeno)
-  samFile <- read.csv(samFile,header=FALSE, check.names = F,stringsAsFactors = F)
+  samFile <- read.csv(samFile,header=FALSE, check.names = F,stringsAsFactors = FALSE)
   samFile <- t(samFile)
   colnames(samFile) <- samFile[1,]
   samFile <- as.data.frame(samFile[-1,])
