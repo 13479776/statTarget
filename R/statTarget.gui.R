@@ -97,7 +97,7 @@
         mydir<-substr(std,1,stop=(nchar(std)-nchar(mystr.lth)-1))
         setwd(mydir)
       }else if(length(grep("/",std,fixed=TRUE))>0){
-        mystr<-strsplit(std,split="/",fixed=T)[[1]]
+        mystr<-strsplit(std,split="/",fixed=TRUE)[[1]]
         mystr.lth<-mystr[length(mystr)]
         mydir<-substr(std,1,stop=(nchar(std)-nchar(mystr.lth)-1))
         setwd(mydir)
