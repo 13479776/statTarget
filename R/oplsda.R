@@ -30,7 +30,7 @@ function(scaling) {
 	}
   X = as.matrix(sorted[,-1], ncol=ncol(sorted)-1)
   nf = 1
-  T=c()
+  To=c()
   P=c()
   C=c()
   W=c()
@@ -62,7 +62,7 @@ for (j in 1:nf) {
   cortho = t(Y)%*%tortho%*%solve(tortho1)
   X = X - tortho%*%t(portho)
  
-  T=matrix(c(T,t))
+  To=matrix(c(To,t))
   P=matrix(c(P,p))
   C=matrix(c(C,c))
   W=matrix(c(W,w))
@@ -71,8 +71,8 @@ for (j in 1:nf) {
   Wortho=matrix(c(Wortho,wortho))
   Cortho=matrix(c(Cortho,cortho))
 }
-T = matrix(T, ncol=nf)
-T = scale(T, scale=FALSE, center=TRUE)
+To = matrix(To, ncol=nf)
+To = scale(To, scale=FALSE, center=TRUE)
 P = matrix(P, ncol=nf)
 C = matrix(C, ncol=nf)
 W = matrix(W, ncol=nf)
@@ -94,33 +94,33 @@ dirout = paste(getwd(), "/OPLS-DA", scaling, "/", sep="")
 dir.create(dirout)
 scor = paste(dirout, "ScorePlot_OPLS-DA_", scaling, ".pdf", sep="")  
 pdf(scor)
-plot(T[,nf], Tortho[,1], col=col, pch=19, xlim = lim, ylim = lim, xlab="T score [1]", ylab = "Orthogonal T score [1]", main = "OPLS-DA score scatter plot")
-text(T[,nf], Tortho[,1], col=col, labels=rownames(sorted), cex=0.5, pos=1)
+plot(To[,nf], Tortho[,1], col=col, pch=19, xlim = lim, ylim = lim, xlab="T score [1]", ylab = "Orthogonal T score [1]", main = "OPLS-DA score scatter plot")
+text(To[,nf], Tortho[,1], col=col, labels=rownames(sorted), cex=0.5, pos=1)
 axis(1, at=lim*2, pos=c(0,0), labels=FALSE, col="grey", lwd=0.7)
 axis(2, at=lim*2, pos=c(0,0), labels=FALSE, col="grey", lwd=0.7)
 
 #requireNamespace(car)
 #library(car)
-dataEllipse_sT(T[,nf], Tortho[,1], levels = c(0.95), add=TRUE, col = "black", lwd = 0.4, plot.points=FALSE, center.cex=0.2)
+dataEllipse_sT(To[,nf], Tortho[,1], levels = c(0.95), add=TRUE, col = "black", lwd = 0.4, plot.points=FALSE, center.cex=0.2)
 dev.off()
 pwdxdef = paste(dirout, "X_deflated.csv", sep="")
 write.csv(X, pwdxdef)
 #scor = paste(dirout, "ScorePlot_OPLS-DA_", scaling, ".pdf", sep="")
 #dev.copy2pdf(file=scor)
 pwdT = paste(dirout, "TScore_Matrix.csv", sep="")
-write.csv(T, pwdT)
+write.csv(To, pwdT)
 pwdTortho = paste(dirout, "TorthoScore_Matrix.csv", sep="")
-write.csv(T, pwdTortho)
+write.csv(To, pwdTortho)
 #S-plot
 s = as.matrix(sorted[,-1], ncol=ncol(sorted)-1)
 p1 = c()
 for (i in 1:ncol(s)) {
-	scov = cov(s[,i], T)
+	scov = cov(s[,i], To)
 	p1 = matrix(c(p1, scov), ncol=1)
 }
 pcorr1 = c()
 for (i in 1:nrow(p1)) {
-	den = apply(T, 2, sd)*sd(s[,i])
+	den = apply(To, 2, sd)*sd(s[,i])
 	corr1 = p1[i,]/den
 	pcorr1 = matrix(c(pcorr1, corr1), ncol=1)
 }
