@@ -2,7 +2,6 @@
 #' @param x the file before QC-RLS correction.
 #' @param z the file after QC-RLS correction.
 #' @param i a index for the name of variable. 
-#' @export
 loplot <- function(x,z,i){
   # x is the loess 
   cn <- colnames(x)
