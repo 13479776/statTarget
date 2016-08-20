@@ -8,7 +8,7 @@ missvalue <- function(mv,degree) {
     for(j in 2:dim(mv)[2]){
       if(mv[i,j] == "0" ){
         
-        mv[i,j] <- tapply(mv[,j],degree,median,na=T)[degree[i]]
+        mv[i,j] <- tapply(mv[,j],degree,median,na=TRUE)[degree[i]]
         
       }
     }
