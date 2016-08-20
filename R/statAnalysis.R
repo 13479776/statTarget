@@ -105,7 +105,7 @@ statAnalysis <- function (file, Frule = 0.8,imputeM = "KNN", glog = TRUE, test.m
     sdvf <- apply(x[,3:ncol(x)],1,sd)
     meanII <- apply(x[,3:ncol(x)],1,mean)
     logvarII <- data.frame(meanII,sdvf)
-    log_rankII <- logvarII[order(logvarII[,1],decreasing=F),]
+    log_rankII <- logvarII[order(logvarII[,1],decreasing=FALSE),]
     logfile = paste(getwd(), "/statTarget/statAnalysis/PreTable/Table_imputation_glog.csv", sep = "")
     write.csv(cbind(x[,1:2],GloggedSmpd), logfile, row.names = FALSE)
     #pdf(paste(getwd(), "/statTarget/hist_plot_glog.pdf"))
