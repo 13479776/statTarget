@@ -12,7 +12,7 @@ Suggests: testthat
 Description: An easy to use tool provides a graphical user interface for quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
 License: GPL (>= 2)
 URL: https://github.com/13479776/statTarget
-biocViews: Metabolomics, MassSpectrometry
+biocViews: Metabolomics, MassSpectrometry, Quality Control, Signal Correction, Statistic Analysis
 RoxygenNote: 5.0.1
 LazyData: true
 NeedsCompilation: no
