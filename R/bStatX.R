@@ -1,7 +1,6 @@
 #' bStatX provide the basic data description for each features
 #' @param file is the data input
 #' @usage  bStatX(file)
-#' @export
 bStatX <- function(file){
     xr <- read.csv(file, sep=",", header=TRUE)
     xs = xr[,3:ncol(xr)]
