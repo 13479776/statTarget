@@ -4,7 +4,10 @@
 #' @details An odds ratio is a measure of association between an exposure and an outcome. OR is equal to 1, which means exposure does not affect odds of outcome. OR  is high than 1, which means exposure associated with higher odds of outcome. OR is less than 1, which means exposure associated with lower odds of outcome.The 95 percent of confidence interval (CI) is used to estimate the precision of the OR. A large CI indicates a low level of precision of the OR, whereas a small CI indicates a higher precision of the OR. It is important to note however, that unlike the p value, the 95 percent of CI does not report a statistical significance. 
 #' @references Afina S. Glas, et al., The diagnostic odds ratio, a single indicator of test performance. Journal of Clinical Epidemiology,2003,11,1129. 
 #' @usage odd.ratio(file)
+<<<<<<< HEAD
 #' @return A matrix with odd.ratio value
+=======
+>>>>>>> origin/master
 odd.ratio <- function(file) {
   pwdfile = paste(getwd(), "/Univariate/DataTable.csv", sep = "")
   file = pwdfile

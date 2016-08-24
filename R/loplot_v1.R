@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 #' @title Loplot, a visible figure of signal correction
 #' @description  loplot provide the visible figure of QC-RLS correction.
 #' @param x The file before QC-RLS correction.
 #' @param z The file after QC-RLS correction.
 #' @param i The name of variable. 
 #' @return The plot of RSD distribution and data table.
+=======
+#' loplot provide the visible figure of QC-RLS correction.
+#' @param x the file before QC-RLS correction.
+#' @param z the file after QC-RLS correction.
+#' @param i a index for the name of variable. 
+>>>>>>> origin/master
 loplot <- function(x,z,i){
   # x is the loess 
   cn <- colnames(x)

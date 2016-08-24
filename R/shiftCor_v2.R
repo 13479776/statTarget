@@ -17,7 +17,11 @@ shiftCor = function(samPeno,samFile,Frule = 0.8,QCspan = 0.75, degree = 2,impute
   cat("\nData File Checking Start..., Time: ",date())
   samPeno <- read.csv(samPeno, header=TRUE, check.names = FALSE,stringsAsFactors = FALSE)
   samPeno <- as.data.frame(samPeno)
+<<<<<<< HEAD
   samFile <- read.csv(samFile,header=FALSE, check.names = FALSE,stringsAsFactors = FALSE)
+=======
+  samFile <- read.csv(samFile,header=FALSE, check.names = F,stringsAsFactors = FALSE)
+>>>>>>> origin/master
   samFile <- t(samFile)
   colnames(samFile) <- samFile[1,]
   samFile <- as.data.frame(samFile[-1,])

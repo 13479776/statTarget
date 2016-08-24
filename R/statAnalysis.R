@@ -3,6 +3,7 @@
 #' @param file The file with  the expression information. 
 #' @param Frule The cut-off value for missing value filter function.
 #' @param imputeM The parameter for imputation method.(i.e., nearest neighbor averaging, "KNN"; minimum values for imputed variables, "min", median values for imputed variables (Group dependent) "median"). 
+<<<<<<< HEAD
 #' @param glog  Generalised logarithm (glog) transformation, with the default value TRUE.
 #' @param test.multi Multiple statistical analysis, with the default value TRUE.
 #' @param FDR The false discovery rate for conceptualizing the rate of type I errors in null hypothesis testing when conducting multiple comparisons.
@@ -17,6 +18,16 @@
 #' @param sig.lim The significance level for metabolites in the Volcano plot.
 #' @return A object of statAnalysis
 statAnalysis <- function (file, Frule = 0.8,imputeM = "KNN", glog = TRUE, test.multi=TRUE, FDR = TRUE, nvarRF =10, scaling = "Pareto",silt = 500, pcax = 1, pcay = 2,Labels = TRUE, upper.lim = 1.5, lower.lim = 0.5, sig.lim = 0.05) {
+=======
+#' @param glog is a data index for log transformation, with the default value TRUE.
+#' @param test.multi must be an index for statistic analysis, with the default value TRUE.
+#' @param scaling is index of scaling method index for statistic analysis (PCA or PLS-DA). 'pareto', 'Pareto', 'p' or 'P' can be used for specifying the Pareto scaling. 'auto', 'Auto', 'auto', 'a' or 'A' can be used for specifying the Auto scaling (or unit variance scaling). 'vast', 'Vast', 'v' or 'V' can be used for specifying the vast scaling. 'range', 'Range', 'r' or 'R' can be used for specifying the Range scaling.
+#' @param nvarRF shows the number of variables in Gini plot of Randomforest model (=< 100). 
+#' @param silt shows the number of permutation times
+#' @param pcax shows principal components in PCA model for the x-axis.
+#' @param pcay shows principal components in PCA model for the y-axis.
+statAnalysis <- function (file, Frule = 0.8,imputeM = "KNN", glog = TRUE, test.multi=TRUE, nvarRF =10, scaling = "Pareto",silt = 500, pcax = 1, pcay = 2) {
+>>>>>>> origin/master
   dirout.uni = paste(getwd(), "/statTarget/", sep = "")
   dir.create(dirout.uni)
   dirout.uni = paste(getwd(), "/statTarget/statAnalysis/", sep = "")
