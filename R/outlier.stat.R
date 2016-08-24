@@ -36,16 +36,8 @@ function(pcx,pcy,scaling) {
     dist2 = as.matrix(dist2)
     D = matrix(dist1[,1] + dist2[,1], ncol=1)
     v = M95*2
-    outliers = c()
-    O = paste(getwd(), "/PCA_Data_", scaling, "/Outliers_PC", pcx, "vs", pcy,".csv", sep="")
-    write.csv(outliers, O)
-     cat("The following observations are calculated as outliers \n",file=O)
-      for (i in 1:nrow(D)) {
-       if (D[i,] > v) {
-        cat(rownames(Score.x)[i]," \n",file=O,append=TRUE)
-    }
-    }
-outlierfile = read.csv(O, header=TRUE)
-n = nrow(outlierfile)
-if (n == 0) {print("No outliers are detected")} else {print(outlierfile)}
-}
+    outliers <- rownames(Score.x)[which(D > as.numeric(v))]
+    n = length(outliers)
+    message("\nThe following observations are calculated as outliers: ")
+    if (n == 0) {print("No outliers were detected")} else {print(outliers)}
+  }

@@ -1,3 +1,7 @@
+#' @title Shapiro test
+#' @description This function provide the Shapiro Wilk test is a test of normality of each pairwise comparison of sample groups.
+#' @param file The connection to the data file.
+#' @return A result with Shapiro Wilk test
 shapiro <-
 function (file) {
     pwdfile = paste(getwd(), "/Univariate/DataTable.csv", sep = "")
@@ -6,6 +10,8 @@ function (file) {
     x.x = x[, 3:ncol(x)]
     rownames(x.x) = x[, 2]
     k = matrix(x[, 1], ncol = 1)
+    slink = paste(getwd(), "/PreTable","/slink.csv", sep="")
+    slink = read.csv(slink, header=TRUE)
     x.n = cbind(k, x.x)
     sorted = x.n[order(x.n[, 1]), ]
     g = c()
@@ -31,14 +37,14 @@ function (file) {
                 fin = rbind(fin, vuota)
             }
         }
-        nam = paste("r", i, sep = ".")
+        nam = paste("r", ExcName(i,slink), sep = ".")
         n = matrix(fin[-1, ], ncol = ncol(sorted))
         n.x = matrix(n[, -1], ncol = ncol(sorted) - 1)
         lastcol = ncol(sorted)
 	  n.x = n.x[,-lastcol]
 	  colnames(n.x) = colnames(x.x)
         name = as.matrix(assign(nam, n.x))
-        shapname = paste("shapiro", i, sep = ".")
+        shapname = paste("shapiro", ExcName(i,slink), sep = ".")
         shapiro = matrix(rep(NA, ncol(n.x)))
         for (q in 1:ncol(name)) {
             notAlist = c()
@@ -46,9 +52,9 @@ function (file) {
             shapiro[q, ] = shapiro.test(notAlist)$p.value
             assign(shapname, shapiro)
         }
-        outputfile = paste("r.", i, ".csv", sep = "")
+        outputfile = paste("r.", ExcName(i,slink), ".csv", sep = "")
         write.csv(name, paste(dirout.r, outputfile, sep = "/"))
-        outshapiro = paste("ShapiroTest.", i, ".csv", sep = "")
+        outshapiro = paste("ShapiroTest.", ExcName(i,slink), ".csv", sep = "")
         shapiro[is.na(shapiro)] = 1
 	  write.csv(shapiro, paste(dirout.s, outshapiro, sep = "/"))
     }

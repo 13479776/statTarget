@@ -2,32 +2,46 @@
 % Please edit documentation in R/statAnalysis.R
 \name{statAnalysis}
 \alias{statAnalysis}
-\title{statAnalysis provide the statistical analysis for metabolomics data or others.}
+\title{statAnalysis}
 \usage{
 statAnalysis(file, Frule = 0.8, imputeM = "KNN", glog = TRUE,
-  test.multi = TRUE, nvarRF = 10, scaling = "Pareto", silt = 500,
-  pcax = 1, pcay = 2)
+  test.multi = TRUE, FDR = TRUE, nvarRF = 10, scaling = "Pareto",
+  silt = 500, pcax = 1, pcay = 2, Labels = TRUE, upper.lim = 1.5,
+  lower.lim = 0.5, sig.lim = 0.05)
 }
 \arguments{
-\item{file}{a file with  the expression information.}
+\item{file}{The file with  the expression information.}
 
 \item{Frule}{The cut-off value for missing value filter function.}
 
 \item{imputeM}{The parameter for imputation method.(i.e., nearest neighbor averaging, "KNN"; minimum values for imputed variables, "min", median values for imputed variables (Group dependent) "median").}
 
-\item{glog}{is a data index for log transformation, with the default value TRUE.}
+\item{glog}{Generalised logarithm (glog) transformation, with the default value TRUE.}
 
-\item{test.multi}{must be an index for statistic analysis, with the default value TRUE.}
+\item{test.multi}{Multiple statistical analysis, with the default value TRUE.}
 
-\item{nvarRF}{shows the number of variables in Gini plot of Randomforest model (=< 100).}
+\item{FDR}{The false discovery rate for conceptualizing the rate of type I errors in null hypothesis testing when conducting multiple comparisons.}
 
-\item{scaling}{is index of scaling method index for statistic analysis (PCA or PLS-DA). 'pareto', 'Pareto', 'p' or 'P' can be used for specifying the Pareto scaling. 'auto', 'Auto', 'auto', 'a' or 'A' can be used for specifying the Auto scaling (or unit variance scaling). 'vast', 'Vast', 'v' or 'V' can be used for specifying the vast scaling. 'range', 'Range', 'r' or 'R' can be used for specifying the Range scaling.}
+\item{nvarRF}{The number of variables in Gini plot of Randomforest model (=< 100).}
 
-\item{silt}{shows the number of permutation times}
+\item{scaling}{Scaling method before statistic analysis (PCA or PLS-DA). 'pareto', 'Pareto', 'p' or 'P' can be used for specifying the Pareto scaling. 'auto', 'Auto', 'auto', 'a' or 'A' can be used for specifying the Auto scaling (or unit variance scaling). 'vast', 'Vast', 'v' or 'V' can be used for specifying the vast scaling. 'range', 'Range', 'r' or 'R' can be used for specifying the Range scaling.}
 
-\item{pcax}{shows principal components in PCA model for the x-axis.}
+\item{silt}{The number of permutation times for PLS-DA model}
 
-\item{pcay}{shows principal components in PCA model for the y-axis.}
+\item{pcax}{Principal components in PCA model for the x-axis.}
+
+\item{pcay}{Principal components in PCA model for the y-axis.}
+
+\item{Labels}{Name labels for score plot of multiple statistical analysis}
+
+\item{upper.lim}{The up-regulated metabolites using Fold Changes cut off values in the Volcano plot.}
+
+\item{lower.lim}{The down-regulated metabolites using Fold Changes cut off values in the Volcano plot.}
+
+\item{sig.lim}{The significance level for metabolites in the Volcano plot.}
+}
+\value{
+A object of statAnalysis
 }
 \description{
 statAnalysis provide the statistical analysis for metabolomics data or others.

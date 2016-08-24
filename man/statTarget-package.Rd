@@ -8,15 +8,18 @@
 \usage{
 statTarget()
 }
+\value{
+A description of statTarget
+}
 \description{
-A graphical user interface, easy to use tool provide quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
+An easy to use tool provide graphical user interface for quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
 }
 \details{
 Package: statTarget
 
 Type: package
 
-Version: 1.2.0
+Version: 1.2.4
 
 Date: 2016-07-014
 

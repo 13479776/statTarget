@@ -2,22 +2,25 @@
 % Please edit documentation in R/rule80.R
 \name{rule80}
 \alias{rule80}
-\title{this function provide the 80 percent rule for the missing value correction}
+\title{80 percent rule for metabolomics data}
 \usage{
-rule80(m,degree)
+rule80(m, degree)
 }
 \arguments{
-\item{m}{is the data input}
+\item{m}{The data input}
 
-\item{degree}{indicate the group factor in the data}
+\item{degree}{The group factor in the data}
+}
+\value{
+A matrix with adjusted data
 }
 \description{
-this function provide the 80 percent rule for the missing value correction
+This function provide the 80 percent rule for the missing value correction
 }
 \details{
 A variable will be kept if it has a non-zero value for at least 80 percent of each group.
 }
 \references{
-Smilde A. K.(2005). Fusion of mass spectrometry-based metabolomics data. Anal. Chem. 77, 6729-36.
+Smilde A. Fusion of mass spectrometry-based metabolomics data. 2005, Anal. Chem. 77, 6729-36.
 }
 

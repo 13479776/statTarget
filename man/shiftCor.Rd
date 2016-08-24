@@ -2,15 +2,15 @@
 % Please edit documentation in R/shiftCor_v2.R
 \name{shiftCor}
 \alias{shiftCor}
-\title{shiftCor provide the QC-RLS correction for large scale metabolomics.}
+\title{shiftCor}
 \usage{
 shiftCor(samPeno, samFile, Frule = 0.8, QCspan = 0.75, degree = 2,
   imputeM = "KNN")
 }
 \arguments{
-\item{samPeno}{a file with  the meta information.}
+\item{samPeno}{The file with  the meta information including the sample name, batches, class and order.}
 
-\item{samFile}{a file with  the expression information.}
+\item{samFile}{The file with  the expression information.}
 
 \item{Frule}{The cut-off value for missing value filter function.}
 
@@ -20,11 +20,13 @@ shiftCor(samPeno, samFile, Frule = 0.8, QCspan = 0.75, degree = 2,
 
 \item{imputeM}{The parameter for imputation method.(i.e., nearest neighbor averaging, "KNN"; minimum values for imputed variables, "min", median values for imputed variables (Group dependent) "median").}
 }
+\value{
+A objects of shiftCor
+}
 \description{
 shiftCor provide the QC-RLS correction for large scale metabolomics.
 }
 \examples{
-library(statTarget)
 datpath <- system.file("extdata",package = "statTarget")
 samPeno <- paste(datpath,"MTBLS79_sampleList.csv", sep="/")
 samFile <- paste(datpath,"MTBLS79.csv", sep="/")

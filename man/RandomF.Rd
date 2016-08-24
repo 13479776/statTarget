@@ -2,14 +2,17 @@
 % Please edit documentation in R/RandomF.R
 \name{RandomF}
 \alias{RandomF}
-\title{RandomF provide the random forest function.}
+\title{Random forest function.}
 \usage{
 RandomF(file, nvarRF)
 }
 \arguments{
-\item{file}{is the data}
+\item{file}{The data of metabolites expression}
 
 \item{nvarRF}{shows the number of variables in Gini plot of Randomforest model (=< 100).}
+}
+\value{
+The MDSplot and data matrix
 }
 \description{
 Multi result was outputed, such as MDS plot, vriable Gini plot and list results

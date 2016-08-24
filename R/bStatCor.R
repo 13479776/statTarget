@@ -75,7 +75,7 @@ bStatCor =
     nColumns = dim(y)[2]
     ans = NULL
     for (i in 1:nColumns) {
-      X = y[, i]     
+      X = as.numeric(y[, i])   
       # Observations:
       X.length = length(X)
       X = X[!is.na(X)]

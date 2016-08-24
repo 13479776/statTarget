@@ -4,5 +4,5 @@ function(scaling) {
   x <- read.csv(pwd.n, sep=",", header=TRUE)
   x.x <- x[,2:ncol(x)]
   rownames(x.x) <- x[,1]
-  print(colnames(x.x))
+  print(colnames(x.x[1:10]))
   }

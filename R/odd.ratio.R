@@ -1,11 +1,10 @@
-#' this function provide the odd.ratio value for metabolomics data or others.
-#' @param file is the data imput
-#' @details 
-#' An odds ratio (OR) is a measure of association between an exposure and an outcome. OR=1 Exposure does not affect odds of outcome; OR>1 Exposure associated with higher odds of outcome; OR<1 Exposure associated with lower odds of outcome.The 95% confidence interval (CI) is used to estimate the precision of the OR. A large CI indicates a low level of precision of the OR, whereas a small CI indicates a higher precision of the OR. It is important to note however, that unlike the p value, the 95% CI does not report a measure???s statistical significance. 
-#' @references 
-#' J Can Acad Child Adolesc Psychiatry. 2010 Aug; 19(3): 227???229. Magdalena Szumilas
+#' @title Odd.ratio
+#' @description This function provide the odd.ratio value for metabolomics data.
+#' @param file The file with the expression information. 
+#' @details An odds ratio is a measure of association between an exposure and an outcome. OR is equal to 1, which means exposure does not affect odds of outcome. OR  is high than 1, which means exposure associated with higher odds of outcome. OR is less than 1, which means exposure associated with lower odds of outcome.The 95 percent of confidence interval (CI) is used to estimate the precision of the OR. A large CI indicates a low level of precision of the OR, whereas a small CI indicates a higher precision of the OR. It is important to note however, that unlike the p value, the 95 percent of CI does not report a statistical significance. 
+#' @references Afina S. Glas, et al., The diagnostic odds ratio, a single indicator of test performance. Journal of Clinical Epidemiology,2003,11,1129. 
 #' @usage odd.ratio(file)
-#' @export
+#' @return A matrix with odd.ratio value
 odd.ratio <- function(file) {
   pwdfile = paste(getwd(), "/Univariate/DataTable.csv", sep = "")
   file = pwdfile
@@ -13,6 +12,8 @@ odd.ratio <- function(file) {
   x.x = x[, 3:ncol(x)]
   rownames(x.x) = x[, 2]
   k = matrix(x[, 1], ncol = 1)
+  slink = paste(getwd(), "/PreTable","/slink.csv", sep="")
+  slink = read.csv(slink, header=TRUE)
   x.n = cbind(k, x.x)
   sorted = x.n[order(x.n[, 1]), ]
   g = c()
@@ -30,8 +31,8 @@ odd.ratio <- function(file) {
   for (i in 1:NoF) {
     for (j in 1:NoF) {
       if (i < j) {
-        ni = paste("r.", i, ".csv", sep = "")
-        nj = paste("r.", j, ".csv", sep = "")
+        ni = paste("r.", ExcName(i,slink), ".csv", sep = "")
+        nj = paste("r.", ExcName(j,slink), ".csv", sep = "")
         pwdi = paste(getwd(), "/Univariate/Groups/", ni, sep = "")
         pwdj = paste(getwd(), "/Univariate/Groups/", nj, sep = "")
         I = read.csv(pwdi, header = TRUE)
@@ -65,7 +66,7 @@ odd.ratio <- function(file) {
         or <- apply(t(IJM),1,function(x){logit.or(outFactor,x)})
         or <- as.data.frame(t(or))
         #write.table(or,"odds_radio.txt",sep="\t",quote=F)
-        or.ij = paste("odds_radio_", i, "vs", j, ".csv", sep = "")
+        or.ij = paste("odds_radio_", ExcName(i,slink), "vs", ExcName(j,slink), ".csv", sep = "")
         assign(or.ij, or)
         write.csv(or, paste(dirout.w, or.ij, sep = "/"))
       }

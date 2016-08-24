@@ -1,4 +1,8 @@
-
+#' @title oplsda
+#' @description  This function provide PLS-DA model according to the class subgroups.
+#' @param  scaling The Scaling method before statistic analysis (PCA or PLS-DA). 'Pareto' can be used for specifying the Pareto scaling. 'Auto' can be used for specifying the Auto scaling (or unit variance scaling). 'Vast' can be used for specifying the vast scaling. 'Range' can be used for specifying the Range scaling.
+#' @param  silt The permutation time in PLS-DA model for single-response models!
+#' @return The matrix of PLS-DA model parameters.
 plsda.stat <-
   function (scaling,silt) {
     pwd.x = paste(getwd(), "/Preprocessing_Data_", scaling, "/ProcessedTable.csv", sep="")
@@ -19,20 +23,22 @@ plsda.stat <-
     B = matrix(rep(NA, dimB), ncol=nrow(g))
     for (i in 1:nrow(sorted)) {
       for (j in 1:nrow(g)) {
-        if (sorted[i,1] == j) { 
+        jn <- g[j,1] 
+        if (sorted[i,1] == jn) { 
           B[i,j] = 1}
         else {
           B[i,j] = 0
         }
       }
     }
-    message(date(),"\\PLS-DA Start...!")
+    
     #requireNamespace(pls)
     #library(pls)
     sorted.x = sorted[,-1]
     sorted.un = matrix(unlist(sorted.x), ncol=ncol(sorted.x))
-    P = pls::plsr(B ~ sorted.un, method = c("oscorespls"), validation = "CV")
-    print(summary(P))
+    P = pls::plsr(B ~ sorted.un, method = c("oscorespls"),ncomp = 10,validation = "CV")
+    message( "\nPLS(-DA) Two Component Model Summary\n")
+    #print(summary(P))
     rownames(P$scores) =  rownames(sorted.x)
     rownames(P$loadings) =  colnames(sorted.x)
     dirout = paste(getwd(), "/PLS_DA_", scaling, "/", sep="")
@@ -70,7 +76,7 @@ plsda.stat <-
       pairs = paste(dirout, "Pairs_PLSDA_", scaling, ".pdf", sep="")
       pdf(pairs)
       pairs = c()
-      if (ncol(P$scores) >= 10) {pairs = c(10)} else {pairs = c(ncol(P$scores))}
+      if (ncol(P$scores) >= 3) {pairs = c(3)} else {pairs = c(ncol(P$scores))}
       
       pairs(P$scores[,1:pairs],col=col)
       #pairs = paste(dirout, "Pairs_PLSDA_", scaling, ".pdf", sep="")
@@ -88,9 +94,9 @@ plsda.stat <-
     colnames(p.v) = c("R2X")
     p.v.csv = paste(dirout, "PLSDA_R2X_", scaling, ".csv", sep="")
     write.csv(p.v, file=p.v.csv)
-    message(date(),"\\PLS-DA Finished!")
+    #message(date(),"\\PLS-DA Finished!")
    ######################## VIP#########
-   corr=cor(sorted.un,P$scores[,1])
+    corr=cor(sorted.un,P$scores[,1])
     splot=cbind(P$loadings[,1],corr)
     splotstat = paste(dirout, "PLSDA_SPlot_", scaling, ".csv", sep="")
     write.table(splot,splotstat)
@@ -102,12 +108,20 @@ plsda.stat <-
     # significant comp, when Q2S>0 R2_Q2........................................
     #R2X_pls=explvar(P)
     #R2X_pls = data.frame(P$"Xvar")
-    Q2_all=as.data.frame(pls::R2(P,"all",intercept = 0)$"val")
+    Q2_all=as.data.frame(pls::R2(P,"all",intercept = 0)$"val") #R2[which estimate,which response,which comp]
     unk <- t(Q2_all)
     unk[apply(unk, 1, function(x) !all(is.na(x))),] -> Q2_all
     #rownames(Q2_all) = rownames(R2X_pls)
     #stat=cbind(R2X_pls*0.01,Q2_all)
     colnames(Q2_all)<-c("R2Y(cum)","Q2(cum)")
+    R2T <- pls::R2(P,"all",intercept = 0)$"val"
+    R2_Q2 <- data.frame(R2T[,,2]) # two components
+    rownames(R2_Q2) <- c("R2Y(cum)","Q2Y(cum)")
+    #cat("PLS(-DA)")
+    cat(nrow(x), "samples x", ncol(x)-1, "variables\n\n")
+    cat("Cumulative Proportion of Variance Explained: R2X(cum) = ", p.v[1] + p.v[2],"%",sep="")
+    cat("\n\nCumulative Proportion of Response(s):\n")
+    print(R2_Q2)
     plsdastat = paste(dirout, "PLSDA_R2Q2_", scaling, ".csv", sep="")
     write.table(Q2_all,plsdastat)
     
@@ -115,8 +129,8 @@ plsda.stat <-
     
     leng = length(g)
     if (leng == 2) {
-    message(date(),"\\permutation time START...!")
-    message("\\...........Tea Time! Take A Rest!...........")
+    message("\nPermutation of PLSDA Model START...!")
+    #message("\\...........Tea Time! Take A Rest!...........")
     #Y=c()
     Dx=list(X=sorted.un,Y=B[,1])
     #attach(D)
@@ -124,7 +138,10 @@ plsda.stat <-
     ##
     #slt <- 2      ## 
     #silt = silt  ## permutation time
+    #r2_sim_CV <- with(Dx,permut(Dx, silt = silt))
+    
     r2_sim_CV <- with(Dx,permut(Dx, silt = silt))
+    
     colnames(r2_sim_CV) <- c("R2","Q2","correlation.coefficient")
     RQ_line = c(Q2_all[3,],1)
     r2_sim_P <- rbind(r2_sim_CV,RQ_line)
@@ -132,32 +149,34 @@ plsda.stat <-
     write.table(r2_sim_P,permutstat)
     permuplot=paste(dirout, "Permutation_", scaling, ".pdf", sep="")
     par(cex.axis=1,cex.lab=1)
-    pdf(permuplot,width=8.2, height=6)
+    pdf(permuplot,width=6, height=6)
     lim_R = 1.3*(max(abs(r2_sim_P[,1])))
     lim_Q = 1.3*(max(abs(r2_sim_P[,2])))
     if (lim_R > lim_Q) {lim = c(-lim_R)} else {lim = c(-lim_Q)}
     if (Q2_all[3,1] > Q2_all[3,2]) {lim_mY = c(Q2_all[3,1])} else {lim_mY = c(Q2_all[3,2])}
-    graphics::plot(abs(r2_sim_P[,3]), r2_sim_P[,1], col="red", xlab = "Correlation", ylab = "", xlim = c(-0.05,1.05), ylim = c(lim,1.3*lim_mY), pch=1,  main = paste("Permutation Plot (", scaling, ")", sep=""))
-    points(abs(r2_sim_P[,3]), r2_sim_P[,2], col="blue4",xlim = c(-0.05,1.05), ylim = lim, pch=0)
-    graphics::abline(h=0,col="grey",lwd = 1.2)
-    graphics::abline(v=0,col="grey",lwd = 1.2)
-    points(1,Q2_all[3,1],col="red",lwd=1,pch=19)
-    points(1,Q2_all[3,2],col="blue4",lwd=1,pch=15)
-    interR <- stats::lm(median(r2_sim_CV[,1])~median(r2_sim_CV[,3]))$fitted.values
-    interceptR <- as.numeric(interR)
-    interQ <- lm(median(r2_sim_CV[,2])~median(r2_sim_CV[,3]))$fitted.values
-    interceptQ <- as.numeric(interQ)
-    segments(0,interceptR,1,Q2_all[3,1],col="red")
-    segments(0,interceptQ,1,Q2_all[3,2],col="blue4")
-    legend(0.3,-lim,legend = c("R2"),bty="n",cex=1,pch = 19, col = "red")
-    legend(0.5,-lim,legend = c("Q2"),bty="n",cex=1,pch = 15, col = "blue4")
+    graphics::plot(abs(r2_sim_P[,3]), r2_sim_P[,1], col="grey", xlab = "Correlation", ylab = "", xlim = c(-0.05,1.05), ylim = c(lim,1.3*lim_mY), pch=19,  main = paste("Permutation Plot (", scaling, ")", sep=""))
+    points(abs(r2_sim_P[,3]), r2_sim_P[,2], col="black",xlim = c(-0.05,1.05), ylim = lim, pch=19)
+    graphics::abline(h=Q2_all[3,1],col="grey",lwd = 1.2)
+    graphics::abline(h=Q2_all[3,2],col="black",lwd = 1.2)
+    points(1,Q2_all[3,1],col="grey",lwd=1,pch=19)
+    points(1,Q2_all[3,2],col="black",lwd=1,pch=19)
+    #interR <- stats::lm(median(r2_sim_CV[,1])~median(r2_sim_CV[,3]))$fitted.values
+    #interceptR <- as.numeric(interR)
+    #interQ <- lm(median(r2_sim_CV[,2])~median(r2_sim_CV[,3]))$fitted.values
+    #interceptQ <- as.numeric(interQ)
+    #segments(0,interceptR,1,Q2_all[3,1],col="#D55E00")
+    #segments(0,interceptQ,1,Q2_all[3,2],col="#009E73")
+    #abline(h=Q2_all[3,1],col="grey")
+    #abline(h=Q2_all[3,1],col="gery")
+    legend("bottomright",legend = c("R2Y","Q2Y"),bty="n",cex=1.2,pch = 19, col = c("grey","black"))
+    #legend("bottomright",1.0, legend = c("Q2"),bty="n",cex=1.5,pch = 19, col = "#009E73")
     grid(lwd = 0.8)
     dev.off()
-    message(date(),"\\Q2!")
-    output <- Q2_all[1:6,]
+    #message( "\nR2 and Q2!")
+    #output <- Q2_all[1:6,]
     #colnames(output) <- c("R2 comp1", "R2 comp2")
-    print(output)
-    message(date(),"\\permutation time Finished!")
+    #print(output)
+    #message(date(),"\\permutation time Finished!")
     ############################
     #permutstat = paste(dirout, "PLSDA_permut_", scaling, ".csv", sep="")
     #write.table(r2_sim_CV,permutstat)
@@ -189,16 +208,16 @@ plsda.stat <-
       #message(date(),"\\permutation time Finished!")
   } 
     if (leng > 2) { 
-        message(date(),"\\More than 3 groups, Permutation Free!")
+        message( "\nWarning: More than two groups, Permutation Test Free!")
     }
     #detach()
     # PERMUTATION ..................................................
  #VIP
 if (nrow(P$Yloadings) > 2) {
-  message(date(),"\\VIP was Only implemented for single-response models!")
+  message( "\nWarning: VIP was only implemented for single-response models!")
 } else {
   if (P$method != "oscorespls")
-    stop("Only implemented for orthogonal scores algorithm.  Refit with 'method = \"oscorespls\"'")
+    stop("\nOnly implemented for orthogonal scores algorithm.  Refit with 'method = \"oscorespls\"'")
   
   SS <- c(P$Yloadings[1,])^2 * colSums(P$scores^2)
   Wnorm2 <- colSums(P$loading.weights^2)

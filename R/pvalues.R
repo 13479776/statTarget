@@ -1,11 +1,18 @@
+#' @title P values
+#' @description This function displyed the  adjusted p values with BH method for each pairwise comparison of sample groups, by intergrating the p values from Student T test for normally distributed variables and from Wilcoxon Mann Whitney test for non-normally distributed variables.
+#' @param file The connection to the data in the Univariate file.
+#' @param fdr The false discovery rate for conceptualizing the rate of type I errors in null hypothesis testing when conducting multiple comparisons.
+#' @return A matrix with p values
 pvalues <-
-function(file, mtc) {
+function(file, fdr) {
  pwdfile=paste(getwd(), "/Univariate/DataTable.csv", sep="")
  file=pwdfile
  x <- read.csv(file, sep=",", header=TRUE)
  x.x = x[,3:ncol(x)]
  rownames(x.x) = x[,2]
  k = matrix(x[,1], ncol=1)
+ slink = paste(getwd(), "/PreTable","/slink.csv", sep="")
+ slink = read.csv(slink, header=TRUE)
  x.n = cbind(k, x.x)
  sorted = x.n[order(x.n[,1]),]
  sorted.x = sorted[,-1]
@@ -22,19 +29,19 @@ NoF=nrow(g)
 for (i in 1:NoF) {
   for (j in 1:NoF) { 
    if (i < j) {
-    shapi=paste("ShapiroTest.",i,".csv",sep="")
-    shapj=paste("ShapiroTest.",j,".csv",sep="")
+    shapi=paste("ShapiroTest.",ExcName(i,slink),".csv",sep="")
+    shapj=paste("ShapiroTest.",ExcName(j,slink),".csv",sep="")
     shap.pwdi = paste(getwd(), "/Univariate/Shapiro_Tests/", shapi, sep="")
     shap.pwdj = paste(getwd(), "/Univariate/Shapiro_Tests/", shapj, sep="")
     Si = read.csv(shap.pwdi, header=TRUE)
     Sj = read.csv(shap.pwdj, header=TRUE)
     Si = matrix(Si[,-1], ncol=1)
     Sj = matrix(Sj[,-1], ncol=1)
-    welchij = paste("WelchTest_",i,"vs",j, ".csv", sep="")
+    welchij = paste("WelchTest_",ExcName(i,slink),"vs",ExcName(j,slink), ".csv", sep="")
     welch.pwdij = paste(getwd(), "/Univariate/WelchTest/", welchij, sep="")
     Wij = read.csv(welch.pwdij, header=TRUE)
     Wij = matrix(Wij[,-1], ncol=1)
-    wmwp = paste("WMWTest_pvalues_",i,"vs",j,".csv", sep="")
+    wmwp = paste("WMWTest_pvalues_",ExcName(i,slink),"vs",ExcName(j,slink),".csv", sep="")
     wmw.pwd = paste(getwd(), "/Univariate/Mann-Whitney_Tests/", wmwp, sep="")
     WMWp = read.csv(wmw.pwd, header=TRUE)
     WMWp = matrix(WMWp[,-1], ncol=1)
@@ -46,10 +53,10 @@ for (i in 1:NoF) {
       else {
 	pvalues[q,] <- WMWp[q,]}
     }
-    if (mtc) {
+    if (fdr) {
     pval.corr = matrix(p.adjust(pvalues, method=c("BH"), n = nrow(pvalues)), ncol=1)
     rownames(pval.corr)=colnames(x.x)
-    pvalfin = paste("Pvalues_", i,"vs", j, ".csv", sep="")
+    pvalfin = paste("Pvalues_", ExcName(i,slink),"vs", ExcName(j,slink), ".csv", sep="")
     assign(pvalfin, pval.corr)
     write.csv(pval.corr, paste(dirout.pv, pvalfin, sep=""))
     sign = c()
@@ -58,12 +65,12 @@ for (i in 1:NoF) {
       sign = matrix(c(sign, colnames(sorted.x)[q]))
       }
     }
-    signnam = paste("Significant_Variables_", i, "vs", j, ".csv", sep="")
+    signnam = paste("Significant_Variables_",ExcName(i,slink), "vs", ExcName(j,slink), ".csv", sep="")
     assign(signnam, sign)
     write.csv(sign, paste(dirout.sign, signnam, sep=""), row.names=FALSE)
     } else {
     rownames(pvalues)=colnames(x.x)
-    pvalfin = paste("Pvalues_", i,"vs", j, ".csv", sep="")
+    pvalfin = paste("Pvalues_",ExcName(i,slink),"vs", ExcName(j,slink), ".csv", sep="")
     assign(pvalfin, pvalues)
     write.csv(pvalues, paste(dirout.pv, pvalfin, sep=""))
     sign = c()
@@ -72,7 +79,7 @@ for (i in 1:NoF) {
       sign = matrix(c(sign, colnames(sorted.x)[q]))
       }
     }
-    signnam = paste("Significant_Variables_", i, "vs", j, ".csv", sep="")
+    signnam = paste("Significant_Variables_", ExcName(i,slink), "vs", ExcName(j,slink), ".csv", sep="")
     assign(signnam, sign)
     write.csv(sign, paste(dirout.sign, signnam, sep=""), row.names=FALSE)
     }

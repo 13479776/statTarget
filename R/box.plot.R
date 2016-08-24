@@ -1,3 +1,7 @@
+#' @title Box Plot
+#' @description Box Plot of each metabolite between groups.
+#' @param file The connection for intensity of metabolites in each group.
+#' @return The box plot
 box.plot <-
 function(file) {
  pwdfile=paste(getwd(), "/Univariate/DataTable.csv", sep="")
@@ -6,6 +10,8 @@ function(file) {
  x.x = x[,3:ncol(x)]
  rownames(x.x) = x[,2]
  k = matrix(x[,1], ncol=1)
+ slink = paste(getwd(), "/PreTable","/slink.csv", sep="")
+ slink = read.csv(slink, header=TRUE)
  colnames(k)[1]="Class"
   x.x = cbind(k, x.x)
  	sorted = x.x[order(x.x[,1]),]
@@ -22,7 +28,7 @@ function(file) {
  	for (i in 2:ncol(x.x)) {
  		name = paste(getwd(), "/Univariate/BoxPlot/", colnames(x.x)[i], ".pdf", sep="")
  		pdf(name)
- 		boxplot(x.x[,i] ~ x.x[,1], boxfill=c(seq(1,NoF)), ylab=colnames(x.x)[i], xlab ="Groups", border="grey30", main = paste("Boxplot ", colnames(x.x)[i], sep=""))
+ 		boxplot(x.x[,i] ~ slink[,1], boxfill=c(seq(1,NoF,1)), ylab=colnames(x.x)[i], xlab ="Groups", border="grey30", main = paste("Boxplot ", colnames(x.x)[i], sep=""))
  		dev.off()
  	}
  	

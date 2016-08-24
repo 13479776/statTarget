@@ -6,6 +6,8 @@ function(file) {
  x.x = x[,3:ncol(x)]
  rownames(x.x) = x[,2]
  k = matrix(x[,1], ncol=1)
+ slink = paste(getwd(), "/PreTable","/slink.csv", sep="")
+ slink = read.csv(slink, header=TRUE)
  x.n = cbind(k, x.x)
  sorted = x.n[order(x.n[,1]),]
  g = c()
@@ -20,7 +22,7 @@ NoF=nrow(g)
   for (i in 1:NoF) { 
    for (j in 1:NoF) {
    if (i < j) {
-    ni=paste("Pvalues_", i,"vs", j, ".csv", sep="")
+    ni=paste("Pvalues_", ExcName(i,slink),"vs", ExcName(j,slink), ".csv", sep="")
     pwdi = paste(getwd(), "/Univariate/Pvalues/", ni, sep="")
     I=read.csv(pwdi, header=TRUE)
     I = matrix(I[,-1])

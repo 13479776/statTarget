@@ -2,16 +2,19 @@
 % Please edit documentation in R/loplot_v1.R
 \name{loplot}
 \alias{loplot}
-\title{loplot provide the visible figure of QC-RLS correction.}
+\title{Loplot, a visible figure of signal correction}
 \usage{
 loplot(x, z, i)
 }
 \arguments{
-\item{x}{the file before QC-RLS correction.}
+\item{x}{The file before QC-RLS correction.}
 
-\item{z}{the file after QC-RLS correction.}
+\item{z}{The file after QC-RLS correction.}
 
-\item{i}{a index for the name of variable.}
+\item{i}{The name of variable.}
+}
+\value{
+The plot of RSD distribution and data table.
 }
 \description{
 loplot provide the visible figure of QC-RLS correction.

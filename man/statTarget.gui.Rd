@@ -6,6 +6,9 @@
 \usage{
 statTarget.gui()
 }
+\value{
+A GUI of statTarget
+}
 \description{
 Get the statTarget GUI session. The Shift Correction and Statistical Analysis session being used by statTarget. Will restart statTarget if it died for some reason. Features of the package statTarget includes shift correction, typical quality control based robust LOESS signal correction (such as QC.RLSC); Data preprocessing, data descriptions, PCA, PLSDA, OPLSDA, VIP, ROC, random forest, odd ratio, Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests; Data preprocessing includes 80-precent rule, log transformation, normalization. Data descriptions includes mean value, median value, sum, quartile, standard derivatives, etc.
 }

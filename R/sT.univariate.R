@@ -1,6 +1,6 @@
 sT.univariate <-
 function (file, nvarRF, imputation = FALSE, imput, normalize = FALSE, 
-    multi.test = TRUE, plot.volcano = FALSE, save.boxplot = TRUE) {
+          FDR = FDR, plot.volcano = TRUE, upper.lim, lower.lim, sig.lim,save.boxplot = TRUE) {
     dirout.uni = paste(getwd(), "/Univariate/", sep = "")
     dir.create(dirout.uni)
     comp = read.csv(file, sep = ",", header = TRUE)
@@ -118,27 +118,33 @@ function (file, nvarRF, imputation = FALSE, imput, normalize = FALSE,
         comp.x = cbind(comp[, 2], comp[, 1], comp.x)
         write.csv(comp.x, pwdfile, row.names = FALSE)
     }
-    message(date(),"\\p-value Start...")
+    message("\nP-value Calculating...")
+    
+    if(FDR){
+      cat("\n*P-value was adjusted using Benjamini-Hochberg Method")
+    }
+    
     shapiro(file)
     welch(file)
     wmw(file)
+    message("\nOdd.Ratio Calculating...")
     odd.ratio(file)
-    message(date(),"\\ROC Start...")
+    message( "\nROC Calculating...")
     auc.ROC(file)
-    message(date(),"\\RandomForest Start...")
+    message("\nRandomForest Calculating...")
+   
     RandomF(file,nvarRF)
-    if (multi.test) {
-        pvalues(file, mtc = TRUE)
+    
+    message("\nVolcano Plot and Box Plot Output...")
+    if (FDR) {
+        pvalues(file, fdr = TRUE)
     }
     else {
-        pvalues(file, mtc = FALSE)
+        pvalues(file, fdr = FALSE)
     }
     col.pvalues(file)
     if (plot.volcano) {
-        volcano(file, plot.vol = TRUE)
-    }
-    else {
-        volcano(file, plot.vol = FALSE)
+        volcano(file, upper.lim = upper.lim, lower.lim = lower.lim, sig.lim = sig.lim)
     }
     if (save.boxplot) {
         box.plot(file)

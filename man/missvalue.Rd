@@ -2,7 +2,7 @@
 % Please edit documentation in R/missvalue.R
 \name{missvalue}
 \alias{missvalue}
-\title{Miss value will be replaced with median value.}
+\title{Missing value imputation}
 \usage{
 missvalue(mv, degree)
 }
@@ -10,6 +10,9 @@ missvalue(mv, degree)
 \item{mv}{is th data file}
 
 \item{degree}{is the group factor}
+}
+\value{
+A imputed matrix
 }
 \description{
 Miss value will be replaced with median value.

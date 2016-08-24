@@ -1,9 +1,9 @@
-#' RandomF provide the random forest function.
+#' Random forest function.
 #' @param nvarRF shows the number of variables in Gini plot of Randomforest model (=< 100). 
-#' @param file is the data
+#' @param file The data of metabolites expression
 #' @description Multi result was outputed, such as MDS plot, vriable Gini plot and list results
 #' @usage RandomF(file, nvarRF)
-#' @export
+#' @return The MDSplot and data matrix
 RandomF <- function(file,nvarRF) {
   pwdfile = paste(getwd(), "/Univariate/DataTable.csv", sep = "")
   file = pwdfile
@@ -11,6 +11,8 @@ RandomF <- function(file,nvarRF) {
   x.x = x[, 3:ncol(x)]
   rownames(x.x) = x[, 2]
   k = matrix(x[, 1], ncol = 1)
+  slink = paste(getwd(), "/PreTable","/slink.csv", sep="")
+  slink = read.csv(slink, header=TRUE)
   x.n = cbind(k, x.x)
   sorted = x.n[order(x.n[, 1]), ]
   g = c()
@@ -31,8 +33,8 @@ RandomF <- function(file,nvarRF) {
   for (i in 1:NoF) {
     for (j in 1:NoF) {
       if (i < j) {
-        ni = paste("r.", i, ".csv", sep = "")
-        nj = paste("r.", j, ".csv", sep = "")
+        ni = paste("r.", ExcName(i,slink), ".csv", sep = "")
+        nj = paste("r.", ExcName(j,slink), ".csv", sep = "")
         pwdi = paste(getwd(), "/Univariate/Groups/", ni, sep = "")
         pwdj = paste(getwd(), "/Univariate/Groups/", nj, sep = "")
         I = read.csv(pwdi, header = TRUE)
@@ -58,8 +60,9 @@ RandomF <- function(file,nvarRF) {
         #xdata <- iris[,1:4]
         #yf <- c(1,1,2,2)
         #y <- as.factor(yf)
-        nrep = 100
-        mods <- rlply(nrep, randomForest(IJM, outf, ntree=500))
+        message(paste("\n*Group.", ExcName(i,slink), sep = "")," Vs.", paste(" Group.", ExcName(j,slink), sep = ""))
+        nrep = 20
+        mods <- rlply(nrep, randomForest(IJM, outf, ntree=500),.progress = "text")
         dat <- matrix(rep(NA),nrep,length(IJM[1,]))
         #dat1 <- matrix(rep(NA),1,)
         dat1 <-c()
@@ -75,51 +78,51 @@ RandomF <- function(file,nvarRF) {
         }
         #write.csv(dat,"Gini_RF.csv")
         #write.csv(dat1,"error.rate.csv")
-        Gini.ij = paste("Gini_", i, "vs", j, ".csv", sep = "")
+        Gini.ij = paste("Gini_", ExcName(i,slink), "vs", ExcName(j,slink), ".csv", sep = "")
         assign(Gini.ij, dat)
         write.csv(dat, paste(dirout.w, Gini.ij, sep = "/"))
-        error.rate.ij = paste("error.rate_", i, "vs", j, ".csv", sep = "")
+        error.rate.ij = paste("error.rate_", ExcName(i,slink), "vs", ExcName(j,slink), ".csv", sep = "")
         assign(error.rate.ij, dat1)
         write.csv(dat1, paste(dirout.w, error.rate.ij, sep = "/"))
         
         ########### Randomforest MDS,boxplot ######
         
-        rfmods <- randomForest(IJM, outf, ntree=500,proximity=TRUE)
-        MDS = paste(dirout.RF, "MDSPlot_", i, "vs", j, ".pdf", sep="")
+        rfmods <- randomForest(IJM, outf, ntree=200,proximity=TRUE)
+        MDS = paste(dirout.RF, "MDSPlot_", ExcName(i,slink), "vs", ExcName(j,slink), ".pdf", sep="")
         pdf(MDS)
-        rfplot <- MDSplot(rfmods, outf,
-        bg=rainbow(length(levels(as.factor(outf))))[unclass=outf], 
-        pch=c(21:25)[unclass=outf], 
-        palette=rep("black",5), 
+        rfplot <- MDSplot(rfmods, outf,k=2,
+        #bg=rainbow(length(levels(as.factor(outf))))[unclass=outf], 
+        #palette=c(1,2),
+        pch=19, 
+        #col=c("#D55E00","#009E73"), 
+        palette=c("#D55E00","#009E73"), 
         xlab="Dimension 1", 
         ylab="Dimension 2", 
-        cex=0.8, main=paste("MDS Plot ", i, " vs ", j, sep=""))
-        legend(
-          "bottomright",
-          levels(outf), 
-          pch=c(21:25,21:25), 
-          col=rep("black",length(levels(outf))), 
-          pt.bg=rainbow(length(levels(outf))), 
+        cex=1.2, main=paste("MDS Plot ", ExcName(i,slink), " vs ", ExcName(j,slink), sep=""))
+        legend("bottomright",
+          legend=levels(outf),
+          pch=19, 
+          col=c("#D55E00","#009E73"), 
           cex=0.6)
         #rfplot <- MDSplot(rfmods, outf,palette=rep(1, 2), pch=as.numeric(outf),col = palette[as.numeric(outf)])
         #plot(rfplot$points,pch=20,bg="black",main=c("Random Forest"),col=c("red","green"))
         #text(Dim1, Dim2, rownames(euro.mds), cex=0.8, col="red")
         dev.off()
-        RFscore.ij = paste("RFscore_", i, "vs", j, ".csv", sep = "")
+        RFscore.ij = paste("RFscore_", ExcName(i,slink), "vs", ExcName(j,slink), ".csv", sep = "")
         assign(RFscore.ij, rfplot$points)
         write.csv(rfplot$points, paste(dirout.w, RFscore.ij, sep = "/"))
-        Giniplot = paste(dirout.RF, "Giniplot_", i, "vs", j, ".pdf", sep="")
+        Giniplot = paste(dirout.RF, "Giniplot_", ExcName(i,slink), "vs", ExcName(j,slink), ".pdf", sep="")
         pdf(Giniplot)
         orderindex <- apply(dat,2,median)
         datindex <- cbind(orderindex,t(dat))
-        sort.dat <- datindex[order(datindex[,1], na.last=NA, decreasing = T),]
+        sort.dat <- datindex[order(datindex[,1], na.last=NA, decreasing = TRUE),]
         sort.dat <- t(sort.dat[,-1]) 
         sort.range <- sort.dat[,1:nvarRF]
         sort.datFilter <- flipdim_sT(sort.range, 2)
         par(mar=c(3, 10, 3, 10) + 0.1,mgp=c(1.5,0.5,0))
-        colfunc <- colorRampPalette(c("white", "green"))
+        colfunc <- colorRampPalette(c("grey48", "#D55E00"))
         #colfunc <- colorRampPalette(colors = brewer.pal(9,"reds"))
-        boxplot(sort.datFilter, main = paste("Gini Plot ", i, " vs ", j, sep=""),
+        boxplot(sort.datFilter, main = paste("Gini Plot ", ExcName(i,slink), " vs ", ExcName(j,slink), sep=""),
                 notch = FALSE, col =colfunc(nvarRF), 
                 cex =0.1, las = 1, xlab= "Mean Decrease Gini",ylab="Variables", horizontal = TRUE,
                 pars = list(boxwex = 0.6, staplewex = 0.3, outwex = 0.3),lwd=0.3,

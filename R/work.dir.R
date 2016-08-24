@@ -66,11 +66,19 @@
 #' @importFrom gWidgets2 font
 #' @importFrom gWidgets2 gstatusbar
 #' @import pls
+#' @import pdist 
+#' @importFrom rrcov plot
+#' @import impute 
+#' @import gWidgets2RGtk2
 #' @importFrom graphics abline
 #' @importFrom stats lm
 #' @importFrom stats complete.cases
 #' @importFrom stats cov.wt
 #' @importFrom stats qf
+#' @importFrom graphics layout
+#' @importFrom stats aggregate
+#' @importFrom utils setTxtProgressBar 
+#' @importFrom utils txtProgressBar
 work.dir <-
 function(dir.name){
   WorkinDir=paste(getwd(),"/", dir.name, "/",sep="")

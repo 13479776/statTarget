@@ -2,14 +2,17 @@
 % Please edit documentation in R/bStatX.R
 \name{bStatX}
 \alias{bStatX}
-\title{bStatX provide the basic data description for each features}
+\title{Description statistic}
 \usage{
 bStatX(file)
 }
 \arguments{
-\item{file}{is the data input}
+\item{file}{The file with the expression information.}
+}
+\value{
+A matrix for data description
 }
 \description{
-bStatX provide the basic data description for each features
+bStatX provide the basic data description for each features. Data descriptions includes mean value, median value, sum, quartile, standard derivatives, etc.
 }
 

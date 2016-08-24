@@ -2,20 +2,23 @@
 % Please edit documentation in R/odd.ratio.R
 \name{odd.ratio}
 \alias{odd.ratio}
-\title{this function provide the odd.ratio value for metabolomics data or others.}
+\title{Odd.ratio}
 \usage{
 odd.ratio(file)
 }
 \arguments{
-\item{file}{is the data imput}
+\item{file}{The file with the expression information.}
+}
+\value{
+A matrix with odd.ratio value
 }
 \description{
-this function provide the odd.ratio value for metabolomics data or others.
+This function provide the odd.ratio value for metabolomics data.
 }
 \details{
-An odds ratio (OR) is a measure of association between an exposure and an outcome. OR=1 Exposure does not affect odds of outcome; OR>1 Exposure associated with higher odds of outcome; OR<1 Exposure associated with lower odds of outcome.The 95% confidence interval (CI) is used to estimate the precision of the OR. A large CI indicates a low level of precision of the OR, whereas a small CI indicates a higher precision of the OR. It is important to note however, that unlike the p value, the 95% CI does not report a measure???s statistical significance.
+An odds ratio is a measure of association between an exposure and an outcome. OR is equal to 1, which means exposure does not affect odds of outcome. OR  is high than 1, which means exposure associated with higher odds of outcome. OR is less than 1, which means exposure associated with lower odds of outcome.The 95 percent of confidence interval (CI) is used to estimate the precision of the OR. A large CI indicates a low level of precision of the OR, whereas a small CI indicates a higher precision of the OR. It is important to note however, that unlike the p value, the 95 percent of CI does not report a statistical significance.
 }
 \references{
-J Can Acad Child Adolesc Psychiatry. 2010 Aug; 19(3): 227???229. Magdalena Szumilas
+Afina S. Glas, et al., The diagnostic odds ratio, a single indicator of test performance. Journal of Clinical Epidemiology,2003,11,1129.
 }
 
