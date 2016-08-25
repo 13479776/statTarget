@@ -1,7 +1,7 @@
 Package: statTarget
 Type: Package
 Title: Statistical Analysis of Metabolite Profile
-Version: 1.2.5
+Version: 1.2.6
 Date: 2016-08-024
 Author: Hemi Luan
 Maintainer: Hemi Luan <hemi.luan@gmail.com>
