@@ -59,7 +59,7 @@ Usage
   
   > library(statTarget)  ## Execute statTarget
   
-  For mac PC, XQuartz should be installed. Download it from https://www.xquartz.org
+  For mac PC, the package "statTarget" requires X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
   Copy this code into R
   
