@@ -2,7 +2,7 @@
 ==============
 Description
 -----------------
-A graphical user interface, easy to use tool provide quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
+A graphical user interface, easy to use tool provide a graphical user interface for quality control based shift signal correction, integration of metabolomic data from multi-batch experiments, and the comprehensive statistic analysis in non-targeted or targeted metabolomics.
 
 Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
