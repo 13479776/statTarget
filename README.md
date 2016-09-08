@@ -2,7 +2,8 @@
 ==============
 Description
 -----------------
-A graphical user interface, easy to use tool provide a graphical user interface for quality control based shift signal correction, integration of metabolomic data from multi-batch experiments, and the comprehensive statistic analysis in non-targeted or targeted metabolomics.
+
+An easy to use tool provides graphical user interface for quality control based shift signal correction, integration of metabolomic data from multi-batch experiments, and the comprehensive statistic analysis in non-targeted or targeted metabolomics.
 
 Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
@@ -24,7 +25,9 @@ Multivariate statistics analysis : PCA, PLSDA, VIP, Random forest.
 
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests. 
 
+
 Biomarkers analysis : ROC, Odd ratio, P-value, and Volcano plot.
+ 
  
 Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/work flow.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
 
@@ -35,6 +38,7 @@ Requirements
 Dependent on R (>= 3.3.0)
 
 Packages should be installed:
+
 randomForest,plyr,pROC,rrcov,RGtk2,pls,gWidgets2,gWidgets2RGtk2,pdist,impute
 
 Steps and Data Frame
@@ -59,7 +63,7 @@ Usage
   
   > library(statTarget)  ## Execute statTarget
   
-  For mac PC, the package "statTarget" requires X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
+  For mac PC,  the package "statTarget" requires X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
   Copy this code into R
   

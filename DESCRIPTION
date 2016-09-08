@@ -8,9 +8,13 @@ Maintainer: Hemi Luan <hemi.luan@gmail.com>
 Depends:
     R (>= 3.3.0)
 Imports:
-    randomForest,plyr,pdist,pROC,utils,grDevices,graphics,stats,rrcov,pls,impute,gWidgets2,gWidgets2RGtk2
+    randomForest,plyr,pdist,pROC,utils,grDevices,graphics,rrcov,stats,
+    pls,impute,gWidgets2,gWidgets2RGtk2
 Suggests:testthat
-Description: An easy to use tool provides a graphical user interface for quality control based signal correction, integration of metabolomic data from multiple batches, and the comprehensive statistic analysis for non-targeted and targeted approaches.
+Description: An easy to use tool provide a graphical user interface for 
+    quality control based shift signal correction, integration of 
+    metabolomic data from multi-batch experiments, and the comprehensive 
+    statistic analysis in non-targeted or targeted metabolomics.
 License: GPL (>= 2)
 URL: https://github.com/13479776/statTarget
 biocViews: Metabolomics, MassSpectrometry, QualityControl
