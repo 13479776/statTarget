@@ -45,7 +45,6 @@ Steps and Data Frame
 -----------------
 ![github](https://github.com/13479776/Picture/blob/master/main_gui8.jpg "13479776")
 
-
 Usage
 -----------------
 
@@ -81,6 +80,10 @@ Author
 -----------------
 
 Hemi Luan, hemi.luan@gmail.com
+
+Citation 
+------------------
+Hemi Luan (2016). statTarget: Statistical Analysis of Metabolite Profile. R package version 1.2.2.
 
 References
 -----------------
