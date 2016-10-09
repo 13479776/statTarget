@@ -56,23 +56,24 @@ Usage
   
   > source("https://bioconductor.org/biocLite.R")
   
-  > biocLite("impute")
-
-  > install.packages("statTarget") 
+  > biocLite("statTarget")
   
-  > library(statTarget)  ## Execute statTarget
+  > library(statTarget)  ## Load statTarget
   
-  For mac PC,  the package "statTarget" requires X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
+  > statTargetGUI()  ## Execute statTarget GUI
+  
+  For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
   Copy this code into R
   
   > source("https://bioconductor.org/biocLite.R")
   
-  > biocLite("impute")
-
-  > install.packages("statTarget") 
+  > biocLite("statTarget")
   
-  > library(statTarget)  ## Execute statTarget
+  > library(statTarget)  ## Load statTarget
+  
+  > statTargetGUI()  ## Execute statTarget GUI 
+  
 
 4 Input data and run (See the [example data](https://github.com/13479776/statTarget/blob/master/Data_example.zip "Data_example.zip"))
 
