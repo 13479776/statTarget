@@ -59,11 +59,12 @@ Usage
   
   > source("https://bioconductor.org/biocLite.R")  
   
-  > biocLite("statTarget")   
+  > biocLite("statTarget")
   
-  > library(statTarget)  ## Load statTarget
+  > library(statTarget)  ## Load statTarget
   
-  > statTargetGUI()  ## Execute statTarget GUI 
+  > statTargetGUI()  ## Execute statTarget GUI 
+  
   
   For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
