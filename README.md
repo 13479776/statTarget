@@ -87,7 +87,7 @@ Hemi Luan, hemi.luan@gmail.com
 
 Citation 
 ------------------
-Hemi Luan (2016). statTarget: Statistical Analysis of Metabolite Profile. R package version 1.2.2.
+Luan H. (2016). statTarget: An R package for statistical analysis of metabolite profile. R package version 1.3.0, http://bioconductor.org/packages/statTarget/.
 
 References
 -----------------
