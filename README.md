@@ -60,13 +60,10 @@ Usage
   > source("https://bioconductor.org/biocLite.R")  
   
   > biocLite("statTarget")   
-  > #安装软件包，如果出现错误，请重复该命令，至安装成功
   
-  > library(statTarget)  ## Load statTarget  
-  > #加载后，提示安装GTK+
+  > library(statTarget)  ## Load statTarget  (GTK+, Yes)
   
   > statTargetGUI()  ## Execute statTarget GUI   
-  > 打开GUI操作界面
   
   For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
