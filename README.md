@@ -57,13 +57,13 @@ Usage
  
   For Windows PC, copy this code into R 
   
-  > source("https://bioconductor.org/biocLite.R")
+  > source("https://bioconductor.org/biocLite.R")  #链接软件数据库
   
-  > biocLite("statTarget")
+  > biocLite("statTarget")   #安装软件包，如果出现错误，请重复该命令，至安装成功
   
-  > library(statTarget)  ## Load statTarget
+  > library(statTarget)  ## Load statTarget  加载后，提示安装GTK+
   
-  > statTargetGUI()  ## Execute statTarget GUI
+  > statTargetGUI()  ## Execute statTarget GUI   打开GUI操作界面
   
   For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
