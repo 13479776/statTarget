@@ -61,9 +61,9 @@ Usage
   
   > biocLite("statTarget")   
   
-  > library(statTarget)  ## Load statTarget  (GTK+, Yes)
+  > library(statTarget)  ## Load statTarget
   
-  > statTargetGUI()  ## Execute statTarget GUI   
+  > statTargetGUI()  ## Execute statTarget GUI 
   
   For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
