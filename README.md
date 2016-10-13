@@ -10,6 +10,8 @@ Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
 Link to Bioconductor: http://www.bioconductor.org/packages/devel/bioc/html/statTarget.html
 
+The Manual: http://www.bioconductor.org/packages/devel/bioc/vignettes/statTarget/inst/doc/statTarget.html
+
 The main GUI of statTarget has two basic components. The first is shift correction. It includes quality control-based robust LOESS signal correction (QC-RLSC) that is a widely accepted method for quality con trol based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
 statTarget - Shift Correction provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
