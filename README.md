@@ -59,7 +59,9 @@ Usage
  
   For Windows PC, copy this code into R 
   
-  > source("https://bioconductor.org/biocLite.R")  
+  > source("https://bioconductor.org/biocLite.R") 
+  
+  > useDevel()
   
   > biocLite("statTarget")
   
@@ -73,6 +75,8 @@ Usage
   Copy this code into R
   
   > source("https://bioconductor.org/biocLite.R")
+  
+  > useDevel()
   
   > biocLite("statTarget")
   
