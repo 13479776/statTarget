@@ -61,8 +61,6 @@ Usage
   
   > source("https://bioconductor.org/biocLite.R") 
   
-  > useDevel()
-  
   > biocLite("statTarget")
   
   > library(statTarget)  ## Load statTarget
@@ -75,8 +73,6 @@ Usage
   Copy this code into R
   
   > source("https://bioconductor.org/biocLite.R")
-  
-  > useDevel()
   
   > biocLite("statTarget")
   
