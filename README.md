@@ -8,7 +8,7 @@ An easy to use tool provides graphical user interface for quality control based 
 Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
 
-Link to Bioconductor: http://www.bioconductor.org/packages/devel/bioc/html/statTarget.html
+Link to Bioconductor: http://bioconductor.org/packages/release/bioc/html/statTarget.html
 
 The Manual: http://www.bioconductor.org/packages/devel/bioc/vignettes/statTarget/inst/doc/statTarget.html
 
