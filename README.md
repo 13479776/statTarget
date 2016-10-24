@@ -33,9 +33,6 @@ Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitn
 
 Biomarkers analysis : ROC, Odd ratio, P-value, and Volcano plot.
  
- 
-Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/work flow.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
-
 
 Requirements
 -----------------
@@ -82,6 +79,13 @@ Usage
   
 
 4 Input data and run (See the [example data](https://github.com/13479776/statTarget/blob/master/Data_example.zip "Data_example.zip"))
+
+
+Tutorial
+-----------------
+
+Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/work flow.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
+
 
 Author
 -----------------
