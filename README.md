@@ -3,7 +3,7 @@
 Description
 -----------------
 
-An easy to use tool provides graphical user interface for quality control based shift signal correction, integration of metabolomic data from multi-batch experiments, and the comprehensive statistic analysis in non-targeted or targeted metabolomics.
+An `easy to use tool` provides `graphical user interface` for quality control based `shift signal correction`, `integration of metabolomic data` from multi-batch experiments, and the `comprehensive statistic analysis` in non-targeted or targeted metabolomics.
 
 Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
@@ -12,11 +12,11 @@ Link to Bioconductor: http://bioconductor.org/packages/release/bioc/html/statTar
 
 The Manual: http://www.bioconductor.org/packages/devel/bioc/vignettes/statTarget/inst/doc/statTarget.html
 
-The main GUI of statTarget has two basic components. The first is shift correction. It includes quality control-based robust LOESS signal correction (QC-RLSC) that is a widely accepted method for quality con trol based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
+The main `GUI of statTarget` has two basic components. The first is shift correction. It includes `quality control-based robust LOESS signal correction (QC-RLSC)` that is a widely accepted method for quality control based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
-statTarget - Shift Correction provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
+`statTarget - Shift Correction` provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
 
-statTarget - Statistical Analysis provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
+`statTarget - Statistical Analysis` provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
 
 
 Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Median imputation and Minimum values imputation.
@@ -60,9 +60,9 @@ Usage
   
   > biocLite("statTarget")
   
-  > library(statTarget)  ## Load statTarget
+  > library(statTarget)  ## `Load statTarget`
   
-  > statTargetGUI()  ## Execute statTarget GUI 
+  > statTargetGUI()  ## `Execute statTarget GUI` 
   
   
   For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
@@ -73,9 +73,9 @@ Usage
   
   > biocLite("statTarget")
   
-  > library(statTarget)  ## Load statTarget
+  > library(statTarget)  ## `Load statTarget`
   
-  > statTargetGUI()  ## Execute statTarget GUI 
+  > statTargetGUI()  ## `Execute statTarget GUI` 
   
 
 4 Input data and run (See the [example data](https://github.com/13479776/statTarget/blob/master/Data_example.zip "Data_example.zip"))
