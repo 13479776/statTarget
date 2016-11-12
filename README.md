@@ -1,5 +1,8 @@
 # statTarget
 ==============
+ **News 2016-11-12: [Development version 1.5.1] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.1")  have been released.** (Bugs fix)
+
+
 Description
 -----------------
 
