@@ -1,17 +1,27 @@
 # statTarget
 ==============
+**News 2016-11-14: [Development version 1.5.2] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.2")  have been released.** (statTarget Alert added)
+
+2016-11-12: [Development version 1.5.1] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.1")  have been released. (Bugs fix)
+
+
 Description
 -----------------
 
-An easy to use tool provides graphical user interface for quality control based shift signal correction, integration of metabolomic data from multi-batch experiments, and the comprehensive statistic analysis in non-targeted or targeted metabolomics.
+An `easy to use tool` provides `graphical user interface` for quality control based `shift signal correction`, `integration of metabolomic data` from multi-batch experiments, and the `comprehensive statistic analysis` in non-targeted or targeted metabolomics.
 
 Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
 
-The main GUI of statTarget has two basic components. The first is shift correction. It includes quality control-based robust LOESS signal correction (QC-RLSC) that is a widely accepted method for quality con trol based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
-statTarget - Shift Correction provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
+Link to Bioconductor: http://bioconductor.org/packages/release/bioc/html/statTarget.html
 
-statTarget - Statistical Analysis provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
+The Manual: http://www.bioconductor.org/packages/devel/bioc/vignettes/statTarget/inst/doc/statTarget.html
+
+The main `GUI of statTarget` has two basic components. The first is shift correction. It includes `quality control-based robust LOESS signal correction (QC-RLSC)` that is a widely accepted method for quality control based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
+
+`statTarget - Shift Correction` provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
+
+`statTarget - Statistical Analysis` provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
 
 
 Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Median imputation and Minimum values imputation.
@@ -28,9 +38,6 @@ Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitn
 
 Biomarkers analysis : ROC, Odd ratio, P-value, and Volcano plot.
  
- 
-Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/work flow.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
-
 
 Requirements
 -----------------
@@ -50,31 +57,40 @@ Usage
 
 1 If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
 
-2 Install the package "statTarget" at the CRAN
+2 Install the package "statTarget" at the Bioconductor
  
   For Windows PC, copy this code into R 
   
-  > source("https://bioconductor.org/biocLite.R")
+  > source("https://bioconductor.org/biocLite.R") 
   
-  > biocLite("impute")
-
-  > install.packages("statTarget") 
+  > biocLite("statTarget")
   
-  > library(statTarget)  ## Execute statTarget
+  > library(statTarget)  ## `Load statTarget`
   
-  For mac PC,  the package "statTarget" requires X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
+  > statTargetGUI()  ## `Execute statTarget GUI` 
+  
+  
+  For mac PC,  X11 support being installed. XQuartz could be installed. Download it from https://www.xquartz.org
   
   Copy this code into R
   
   > source("https://bioconductor.org/biocLite.R")
   
-  > biocLite("impute")
-
-  > install.packages("statTarget") 
+  > biocLite("statTarget")
   
-  > library(statTarget)  ## Execute statTarget
+  > library(statTarget)  ## `Load statTarget`
+  
+  > statTargetGUI()  ## `Execute statTarget GUI` 
+  
 
 4 Input data and run (See the [example data](https://github.com/13479776/statTarget/blob/master/Data_example.zip "Data_example.zip"))
+
+
+Tutorial
+-----------------
+
+Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/work flow.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
+
 
 Author
 -----------------
@@ -83,7 +99,7 @@ Hemi Luan, hemi.luan@gmail.com
 
 Citation 
 ------------------
-Hemi Luan (2016). statTarget: Statistical Analysis of Metabolite Profile. R package version 1.2.2.
+Luan H. (2016). statTarget: Statistical Analysis of Metabolite Profile. R package version 1.4.0, https://github.com/13479776/statTarget.
 
 References
 -----------------
