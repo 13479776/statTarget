@@ -83,7 +83,9 @@ Usage
   > statTargetGUI()  ## `Execute statTarget GUI` 
   
 
-4 Input data and run. (See the work flow: Shift Correction, `example(shiftCor)` or Statistical Analysis, `example(statAnalysis)`
+4 Input data and run. 
+
+(See the work flow: Shift Correction, `example(shiftCor)` or Statistical Analysis, `example(statAnalysis)`
 
 
 Tutorial
