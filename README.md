@@ -1,7 +1,9 @@
-# statTarget
+# statTarget 
 
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?style=flat-square)](http://bioconductor.org/packages/statTarget/)
-[![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg?style=flat-square)](http://bioconductor.org/packages/statTarget/)
+![GitHub release](https://img.shields.io/badge/statTarget-Good-blue.svg)
+![GitHub release](https://img.shields.io/badge/statTarget-v 1.4.5-red.svg)
+![GitHub release](https://img.shields.io/badge/downloads-top%2050%25-green.svg)
+
 
 ==============
 **News 2016-11-14: [Development version 1.5.2] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.2")  have been released.** (statTarget Alert added)
