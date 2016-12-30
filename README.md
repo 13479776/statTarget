@@ -9,22 +9,21 @@
 ==============
 **Frequently Asked Questions**
 ```
-Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg 1)
-
-    Only unique value or character could be typed into the 1st column of Profile Files and labelled as the metabolites ID.
-     
 Q2) Error: in imsamFP[, 2:ncol(imsamFP)]: subscript out of bounds
 
     In the statTarget version 1.4.7, the 1st column name of Profile Files is fixed and should be labelled as "name".
 
+Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg 1)
+
+    Only unique value or character could be typed into the 1st column of Profile Files and labelled as the metabolites ID.
+
 ```
 **News Reports**
-
+```
 News 2016-12-17: [Development version 1.5.5] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.2")  have been released. (statTarget Alert added)
 
 2016-11-12: [Development version 1.5.1] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.1")  have been released. (Bugs fix)
-
-
+```
 Description
 -----------------
 
