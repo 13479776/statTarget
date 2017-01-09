@@ -11,7 +11,7 @@
 ```
 Q2) Error: in imsamFP[, 2:ncol(imsamFP)]: subscript out of bounds
 
-    In the statTarget version 1.4.7, the 1st column name of Profile Files is fixed and should be labelled as "name".
+    In the statTarget version 1.4.X, the 1st column name of Profile Files is prefixed and should be labelled as "name".
 
 Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg 1)
 
