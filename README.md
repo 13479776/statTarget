@@ -1,7 +1,7 @@
 # statTarget 
 
 ![GitHub release](https://img.shields.io/badge/statTarget-Good-blue.svg)
-![GitHub release](https://img.shields.io/badge/releases-v 1.4.7-yellow.svg)
+![GitHub release](https://img.shields.io/badge/releases-v 1.4.10-yellow.svg)
 ![GitHub release](https://img.shields.io/badge/downloads-top%2020%25-green.svg)
 
 ![GitHub release](https://img.shields.io/badge/Dependents-R 3.3.0 -brightgreen.svg)
