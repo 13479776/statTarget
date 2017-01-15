@@ -20,7 +20,7 @@ Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg
 ```
 **News Reports**
 ```
-News  2017-1-8: [Release version 1.4.8] (http://bioconductor.org/packages/release/bioc/html/statTarget.html "version 1.4.8")  have been released.
+News  2017-1-15: [Release version 1.4.10] (http://bioconductor.org/packages/release/bioc/html/statTarget.html "version 1.4.8")  have been released.
 
 2016-12-17: [Development version 1.5.5] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.2")  have been released. (statTarget Alert added)
 
