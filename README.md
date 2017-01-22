@@ -20,7 +20,12 @@ Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg
 ```
 **News Reports**
 ```
-News  2017-1-15: [Release version 1.4.10] (http://bioconductor.org/packages/release/bioc/html/statTarget.html "version 1.4.8")  have been released.
+News  2017-1-21: [Development version 1.5.6] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.6")  have been released.
+
+transX() is to generate statTarget inputs from Mass Spectrometry Data softwares, like XCMS.
+transX() directly read the .tsv file from diffreport function in XCMS software.
+
+2017-1-15: [Release version 1.4.10] (http://bioconductor.org/packages/release/bioc/html/statTarget.html "version 1.4.8")  have been released.
 
 2016-12-17: [Development version 1.5.5] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.2")  have been released. (statTarget Alert added)
 
@@ -106,7 +111,15 @@ Usage
 
 4 Input data and run. 
 
-(See the work flow: Shift Correction, `example(shiftCor)` or Statistical Analysis, `example(statAnalysis)`
+***
+See the work flow: Shift Correction, `example(shiftCor)` or Statistical Analysis, `example(statAnalysis)`
+
+
+transX() is to generate statTarget inputs from Mass Spectrometry Data softwares, like XCMS.
+
+
+transX() directly read the .tsv file from diffreport function in XCMS software.
+***
 
 
 Tutorial
