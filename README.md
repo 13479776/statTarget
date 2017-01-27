@@ -125,7 +125,7 @@ transX() directly read the .tsv file from diffreport function in XCMS software.
 Tutorial
 -----------------
 
-Download the [statTarget tutorial](https://github.com/13479776/Picture/blob/master/work flow.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
+Download the [statTarget tutorial](https://raw.githubusercontent.com/13479776/Picture/master/%20statTarget_tutorial%20.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
 
 
 Author
