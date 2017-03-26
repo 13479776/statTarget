@@ -1,12 +1,14 @@
 # statTarget 
 
 ![GitHub release](https://img.shields.io/badge/statTarget-Good-blue.svg)
-![GitHub release](https://img.shields.io/badge/releases-v 1.4.10-yellow.svg)
+![GitHub release](https://img.shields.io/badge/releases-v%201.4.12-yellow.svg)
 ![GitHub release](https://img.shields.io/badge/downloads-top%2020%25-green.svg)
 
-![GitHub release](https://img.shields.io/badge/Dependents-R 3.3.0 -brightgreen.svg)
+![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
 
 ==============
+
+
 **Frequently Asked Questions**
 ```
 Q2) Error: in imsamFP[, 2:ncol(imsamFP)]: subscript out of bounds
