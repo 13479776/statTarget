@@ -38,8 +38,6 @@ Description
 
 An `easy to use tool` provides `graphical user interface` for quality control based `shift signal correction`, `integration of metabolomic data` from multi-batch experiments, and the `comprehensive statistic analysis` in non-targeted or targeted metabolomics.
 
-Link to CRAN: https://cran.r-project.org/web/packages/statTarget/
-
 
 Link to Bioconductor: http://bioconductor.org/packages/devel/bioc/html/statTarget.html
 
