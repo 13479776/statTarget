@@ -22,7 +22,11 @@ Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg
 ```
 **News Reports**
 ```
-News  2017-1-21: [Development version 1.5.6] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.6")  have been released.
+News  2017-4-1: [Development version 1.5.7] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.7")  have been released.
+
+The result of Fold Change will be calculated accroding to the raw data in version 1.4.12 and dev_v1.5.7 (following the missing value estimation step).
+
+2017-1-21: [Development version 1.5.6] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.6")  have been released.
 
 transX() is to generate statTarget inputs from Mass Spectrometry Data softwares, like XCMS.
 transX() directly read the .tsv file from diffreport function in XCMS software.
