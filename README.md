@@ -47,7 +47,7 @@ Link to Bioconductor: http://bioconductor.org/packages/devel/bioc/html/statTarge
 
 The Manual: http://www.bioconductor.org/packages/devel/bioc/vignettes/statTarget/inst/doc/statTarget.html
 
-The main `GUI of statTarget` has two basic components. The first is signal correction. It includes `quality control-based robust LOESS signal correction (QC-RLSC)` that is a widely accepted method for quality control based signal correction and integration of metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
+The main `GUI of statTarget` has two basic components. The first is signal correction. It includes `quality control-based signal correction` that is a widely accepted method for removal of inter-batch and intra-batch unwanted variations and integration of large-scale metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
 
 `statTarget - Shift Correction` provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
 
@@ -60,7 +60,7 @@ Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Media
 Data descriptions : Mean value, Median value, Sum, Quartile, Standard derivatives, etc.
 
 
-Multivariate statistics analysis : PCA, PLSDA, VIP, Random forest.
+Multivariate statistics analysis : PCA, PLS-DA, VIP, Permutation test, S-plot, Random forest.
 
 
 Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests. 
