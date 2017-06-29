@@ -95,18 +95,10 @@ Usage
   
   > biocLite("statTarget")
   
-  > library(statTarget) 
+  > library(statTarget) 
     
   > statTargetGUI() 
-  
-  
-    *GTK+ 
-  
-    For Win PC, If GTK+ is not available, a notice will be shown. please press 'OK'.
-  
-    For mac PC,  X11 support should be installed. XQuartz could be installed. Download it from https://www.xquartz.org
-  
-  
+    
   
   Copy this code into R
   
@@ -120,6 +112,15 @@ Usage
   
 
 4 Input data and run. 
+
+
+
+    *GTK+ installation
+  
+    For Win PC, If GTK+ is not available, a notice will be shown. please press 'OK'.
+  
+    For mac PC,  X11 support should be installed. XQuartz could be installed. Download it from https://www.xquartz.org
+  
 
 ***
 See the work flow: Shift Correction, `example(shiftCor)` or Statistical Analysis, `example(statAnalysis)`
