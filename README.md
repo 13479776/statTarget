@@ -95,7 +95,7 @@ Usage
   
   > biocLite("statTarget")
   
-  > library(statTarget)  ## `Load statTarget`
+  > library(statTarget)  ## `Load statTarget`. If GTK+ is not available, a notice will be shown to install the GTK+. please press `OK`.
   
   > statTargetGUI()  ## `Execute statTarget GUI` 
   
