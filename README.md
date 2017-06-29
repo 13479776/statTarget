@@ -95,15 +95,18 @@ Usage
   
   > biocLite("statTarget")
   
-  > library(statTarget)  * `Load statTarget. 
+  > library(statTarget) ## `Load statTarget. `
     
   > statTargetGUI()  ## `Execute statTarget GUI` 
+  
   
   *GTK+ 
   
   For Win PC, If GTK+ is not available, a notice will be shown. please press 'OK'.
   
   For mac PC,  X11 support should be installed. XQuartz could be installed. Download it from https://www.xquartz.org
+  
+  
   
   Copy this code into R
   
