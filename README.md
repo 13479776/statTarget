@@ -119,7 +119,7 @@ Usage
   
     For Win PC, If GTK+ is not available, a notice will be shown. please press 'OK'.
   
-    For mac PC,  X11 support should be installed. XQuartz could be installed. Download it from https://www.xquartz.org
+    For mac PC,  XQuartz instead of X11 should be installed. Download it from https://www.xquartz.org. Further information on installing the right version of GTK for R version 3 can be found on [GitHub] (https://gist.github.com/sebkopf/9405675)
   
 
 ***
