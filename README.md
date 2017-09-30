@@ -119,7 +119,7 @@ Usage
   
     For Win PC, If GTK+ is not available, a notice will be shown. please press 'OK'.
   
-    For mac PC,  XQuartz instead of X11 should be installed. Download it from https://www.xquartz.org. if the you have problems of RGtk2 installation, R version 3.3.3 and version RGtk2 2.20.31 will be fine. RGtk2, https://cran.r-project.org/bin/macosx/mavericks/contrib/3.3/RGtk2_2.20.31.tgz.
+    For mac PC,  XQuartz instead of X11 should be installed. Download it from https://www.xquartz.org. if the you have problems of RGtk2 installation, *R 3.3.3* and  *RGtk2 2.20.31* will be fine. Download RGtk2 2.20.31 from https://cran.r-project.org/bin/macosx/mavericks/contrib/3.3/RGtk2_2.20.31.tgz.
   
 
 ***
