@@ -11,6 +11,9 @@
 
 **Frequently Asked Questions**
 ```
+Q3) ERROR: RGTK2 installation error for Mac OS paltform
+    The R 3.3.0 and RGtk2 2.20.31 sailed through the test. We recommend the R 3.3.0 and RGtk2 2.20.31 for mac OS paltform. If you have multiple versions of R framework installed, RSwitch - a small GUI that allows you to switch between R versions quickly. Download it from https://r.research.att.com
+
 Q2) Error: in imsamFP[, 2:ncol(imsamFP)]: subscript out of bounds
 
     In the statTarget version 1.4.X, the 1st column name of Profile Files is prefixed and should be labelled as "name".
