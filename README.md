@@ -6,7 +6,7 @@
 
 ![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
 
-See statTarget2 at https://stattarget.github.io/docs/
+statTarget2 was released at https://stattarget.github.io/docs/
 ==============
 
 **Citation
@@ -154,11 +154,8 @@ Download the [statTarget tutorial](https://raw.githubusercontent.com/13479776/Pi
 Author
 -----------------
 
-Hemi Luan, hemi.luan@gmail.com
+Hemi Luan, luanhm@sustc.edu.cn, hemi.luan@gmail.com
 
-Citation 
-------------------
-Luan H. (2016). statTarget: Statistical Analysis of Metabolite Profile. R package version 1.4.0, https://github.com/13479776/statTarget.
 
 References
 -----------------
