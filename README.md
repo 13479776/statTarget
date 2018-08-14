@@ -6,8 +6,16 @@
 
 ![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
 
+See statTarget2 at https://stattarget.github.io/docs/
 ==============
 
+**Citation
+
+Please cite the following article when using statTarget or QC-RFSC algorithm:
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal drift correction and interpretations of quantitative mass spectrometry-based omics data. Analytica Chimica Acta. dio: https://doi.org/10.1016/j.aca.2018.08.002
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: https://doi.org/10.1101/253583
 
 **Frequently Asked Questions**
 ```
