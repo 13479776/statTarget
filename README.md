@@ -21,23 +21,13 @@ Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal
 
 Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: https://doi.org/10.1101/253583
 
-**Frequently Asked Questions**
-```
-Q3) ERROR: RGTK2 installation error for Mac OS paltform
 
-    The R 3.3.0 and RGtk2 2.20.31 sailed through the test. We recommend the R 3.3.0 and RGtk2 2.20.31 for mac OS paltform. If you have multiple versions of R framework installed, RSwitch - a small GUI that allows you to switch between R versions quickly. Download it from https://r.research.att.com
 
-Q2) Error: in imsamFP[, 2:ncol(imsamFP)]: subscript out of bounds
-
-    In the statTarget version 1.4.X, the 1st column name of Profile Files is prefixed and should be labelled as "name".
-
-Q1) Error: in knnimp.internal(...), NA/NaN/Inf in the foreign function call (arg 1)
-
-    Only unique value or character could be typed into the 1st column of Profile Files and labelled as the metabolites ID.
-
-```
 **News Reports**
 ```
+News  2018-8-14: statTarget2 was released at https://stattarget.github.io/docs/
+New Features: QC-RFSC, permutation importance, new interface, etc..
+
 News  2017-4-1: [Development version 1.5.7] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.7")  have been released.
 
 The result of Fold Change will be calculated accroding to the raw data in version 1.4.12 and dev_v1.5.7 (following the missing value estimation step).
