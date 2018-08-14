@@ -6,7 +6,10 @@
 
 ![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
 
+```
 statTarget2 was released at https://stattarget.github.io/docs/
+
+```
 ==============
 
 **Citation
