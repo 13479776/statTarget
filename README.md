@@ -26,9 +26,11 @@ Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correc
 **News Reports**
 ```
 News  2018-8-14: statTarget2 was released at https://stattarget.github.io/docs/
-New Features: QC-RFSC, permutation importance, new interface, etc..
+                 New Features: QC-RFSC, permutation importance, new interface, etc..
+                 
+                 
 
-News  2017-4-1: [Development version 1.5.7] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.7")  have been released.
+2017-4-1: [Development version 1.5.7] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.7")  have been released.
 
 The result of Fold Change will be calculated accroding to the raw data in version 1.4.12 and dev_v1.5.7 (following the missing value estimation step).
 
