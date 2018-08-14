@@ -8,11 +8,12 @@
 
 ```
 statTarget2 was released at https://stattarget.github.io/docs/
-
+New Features: QC-RFSC
 ```
 ==============
 
-**Citation
+
+**Citation**
 
 Please cite the following article when using statTarget or QC-RFSC algorithm:
 
