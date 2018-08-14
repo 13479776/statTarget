@@ -10,7 +10,7 @@
 statTarget2 was released at https://stattarget.github.io/docs/
 New Features: QC-RFSC
 ```
-==============
+----------------------------
 
 
 **Citation**
