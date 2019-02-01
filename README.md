@@ -1,163 +1,80 @@
-# statTarget 
+
+# statTarget2 
+<p align="">
+ <img src="https://github.com/13479776/Picture/blob/master/statTarget_label_biocticker.png" height="200" title="statTarget 2.0">
+ </p>
+
 
 ![GitHub release](https://img.shields.io/badge/statTarget-Good-blue.svg)
-![GitHub release](https://img.shields.io/badge/releases-v%201.6.0-yellow.svg)
+![GitHub release](https://img.shields.io/badge/releases-v%201.11.2-yellow.svg)
 ![GitHub release](https://img.shields.io/badge/downloads-top%2020%25-green.svg)
+![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
 ![GitHub release](https://img.shields.io/badge/downloads-9020/total-brightgreen.svg)
 
-![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
-
-```
-statTarget2 was released at https://stattarget.github.io/docs/
-New Features: QC-RFSC
-```
-----------------------------
 
 
-**Citation**
-
-Please cite the following article when using statTarget or QC-RFSC algorithm:
-
-Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal drift correction and interpretations of quantitative mass spectrometry-based omics data. Analytica Chimica Acta. dio: https://doi.org/10.1016/j.aca.2018.08.002
-
-Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: https://doi.org/10.1101/253583
+For details see https://stattarget.github.io/docs/
 
 
-
-**News Reports**
-```
-News  2018-8-14: statTarget2 was released at https://stattarget.github.io/docs/
-                 New Features: QC-RFSC, permutation importance, new interface, etc..
-                 
-                 
-
-2017-4-1: [Development version 1.5.7] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.7")  have been released.
-
-The result of Fold Change will be calculated accroding to the raw data in version 1.4.12 and dev_v1.5.7 (following the missing value estimation step).
-
-2017-1-21: [Development version 1.5.6] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.6")  have been released.
-
-transX() is to generate statTarget inputs from Mass Spectrometry Data softwares, like XCMS.
-transX() directly read the .tsv file from diffreport function in XCMS software.
-
-2017-1-15: [Release version 1.4.10] (http://bioconductor.org/packages/release/bioc/html/statTarget.html "version 1.4.8")  have been released.
-
-2016-12-17: [Development version 1.5.5] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.2")  have been released. (statTarget Alert added)
-
-2016-11-12: [Development version 1.5.1] (http://bioconductor.org/packages/devel/bioc/html/statTarget.html "version 1.5.1")  have been released. (Bugs fix)
-```
-Description
------------------
-
-An `easy to use tool` provides `graphical user interface` for quality control based `signal correction`, `integration of metabolomic data` from multi-batch experiments, and the `comprehensive statistic analysis` in non-targeted or targeted metabolomics.
+Package vignettes: [Vignettes](https://stattarget.github.io/docs/my-new-doc/) 
 
 
-Link to Bioconductor: http://bioconductor.org/packages/devel/bioc/html/statTarget.html
-
-The Manual: http://www.bioconductor.org/packages/devel/bioc/vignettes/statTarget/inst/doc/statTarget.html
-
-The main `GUI of statTarget` has two basic components. The first is signal correction. It includes `quality control-based signal correction` that is a widely accepted method for removal of inter-batch and intra-batch unwanted variations and integration of large-scale metabolomic data from multiple analytical batches (Dunn WB., et al. 2011; Luan H., et al. 2015).
-
-`statTarget - Shift Correction` provide QC-RLSC algorithm that fit the QC data, and each metabolites in the true sample will be normalized to the QC sample. Additionally, LOESS based generalised cross-validation (GCV) would be automatically applied to avoid overfitting of the observed data, when the QCspan was set at 0 (Default value).
-
-`statTarget - Statistical Analysis` provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
+Reference manual: [Manual](https://github.com/13479776/Picture/blob/master/statTarget-manual.pdf)
 
 
-Data preprocessing : 80-precent rule, glog transformation, KNN imputation, Median imputation and Minimum values imputation.
+Demo data: [Data](https://stattarget.github.io/docs/demo/)
 
 
-Data descriptions : Mean value, Median value, Sum, Quartile, Standard derivatives, etc.
+Example reports: [Reports](https://stattarget.github.io/docs/demo/)
 
 
-Multivariate statistics analysis : PCA, PLS-DA, VIP, Permutation test, S-plot, Random forest.
+Binary Package: [statTarget2_WindowsOnly.zip](https://github.com/13479776/Picture/raw/master/statTarget_2.0.0.zip)
 
+###  Citation
 
-Univariate analysis : Student T-test, Shapiro-Wilk normality test and Mann-Whitney tests. 
-
-
-Biomarkers analysis : ROC, Odd ratio, P-value, and Volcano plot.
+ Please cite the following article when using statTarget or QC-RFSC algorithm:
  
-
-Requirements
------------------
-
-Dependent on R (>= 3.3.0)
-
-Packages should be installed:
-
-randomForest,plyr,pROC,rrcov,RGtk2,pls,gWidgets2,gWidgets2RGtk2,pdist,impute
-
-Steps and Data Frame
------------------
-![github](https://github.com/13479776/Picture/blob/master/statTarget.png "13479776")
-
-Usage
------------------
-
-1 If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
-
-2 Install the package "statTarget" at the Bioconductor
+ Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal drift correction and interpretations of quantitative mass spectrometry-based omics data. Analytica Chimica Acta. dio: https://doi.org/10.1016/j.aca.2018.08.002
  
-  For Windows PC, copy this code into R 
-  
-  > source("https://bioconductor.org/biocLite.R") 
-  
-  > biocLite("statTarget")
-  
-  > library(statTarget) 
+ Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: https://doi.org/10.1101/253583
+
+### System requirements
+--------------------------------------------------------------------
+
+> Dependent on R (>= 3.3.0)
+
+> If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
+
+
+### Installation
+--------------------------------------------------------------------
+     
+> Install “statTarget2” at the Bioconductor
+
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+    BiocManager::install("statTarget", version = "3.8") 
+    library(statTarget)
+    statTargetGUI()
+ 
+     
+> Install the version of "statTarget2" at Github. copy this code into R
+
+    library(devtools)
     
-  > statTargetGUI() 
+    devtools::install_github("statTarget/statTarget2")
     
-  
-  Copy this code into R
-  
-  > source("https://bioconductor.org/biocLite.R")
-  
-  > biocLite("statTarget")
-  
-  > library(statTarget)  ## `Load statTarget`
-  
-  > statTargetGUI()  ## `Execute statTarget GUI` 
-  
-
-4 Input data and run. 
+    library(statTarget)
+    
+    statTargetGUI()
 
 
-
-    *GTK+ installation
-  
-    For Win PC, If GTK+ is not available, a notice will be shown. please press 'OK'.
-  
-    For mac PC,  XQuartz instead of X11 should be installed. Download it from https://www.xquartz.org. if the you have problems of RGtk2 installation, *R 3.3.3* and  *RGtk2 2.20.31* will be fine. Download RGtk2 2.20.31 from https://cran.r-project.org/bin/macosx/mavericks/contrib/3.3/RGtk2_2.20.31.tgz.
-  
-
-***
-See the work flow: Shift Correction, `example(shiftCor)` or Statistical Analysis, `example(statAnalysis)`
+    
+> IMPORTANCE: for mac PC,  XQuartz instead of X11 support should be installed for the Graphical User Interface (GUI). Download it from https://www.xquartz.org. 
 
 
-transX() is to generate statTarget inputs from Mass Spectrometry Data softwares, like XCMS.
+> RGTK2 is a binding for R to the GTK2 library and dependent libraries, and a multi-platform package for creating graphical user interfaces. If you have any problems about RGTK2 installation, see the related installation information for R and GTK on Windows/Mac OS at https://gist.github.com/sebkopf/9405675. 
 
 
-transX() directly read the .tsv file from diffreport function in XCMS software.
-***
+> We recommend the R 3.3.0 and RGtk2 2.20.31 for mac OS paltform. `The R 3.3.0 and RGtk2 2.20.31 sailed through the test.` If you have multiple versions of R framework installed, RSwitch  - a small GUI that allows you to switch between R versions quickly. Download it from https://r.research.att.com
 
-
-Tutorial
------------------
-
-Download the [statTarget tutorial](https://raw.githubusercontent.com/13479776/Picture/master/%20statTarget_tutorial%20.pptx "statTarget tutorial .pptx") and [example data](https://github.com/13479776/Picture/blob/master/Data_example.zip "Data_example.zip") .
-
-
-Author
------------------
-
-Hemi Luan, luanhm@sustc.edu.cn, hemi.luan@gmail.com
-
-
-References
------------------
-Dunn, W.B., et al.,Procedures for large-scale metabolic profiling of serum and plasma using gas chromatography and liquid chromatography coupled to mass spectrometry. Nature Protocols 2011, 6, 1060-83.
-
-Luan H., LC–MS-Based Urinary Metabolite Signatures in Idiopathic Parkinson’s Disease. J Proteome Res., 2015, 14 (1),467–478.
-
-Luan H., Non-targeted metabolomics and lipidomics LC–MS data from maternal plasma of 180 healthy pregnant women. GigaScience 2015 4:16
