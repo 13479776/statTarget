@@ -13,7 +13,7 @@
 
 
 
-For details see https://stattarget.github.io/docs/
+For details and latest version see https://stattarget.github.io/docs/
 
 
 Package vignettes: [Vignettes](https://stattarget.github.io/docs/my-new-doc/) 
@@ -53,7 +53,7 @@ Binary Package: [statTarget2_WindowsOnly.zip](https://github.com/13479776/Pictur
 
     if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-    BiocManager::install("statTarget", version = "3.8") 
+    BiocManager::install("statTarget", version = "3.9") 
     library(statTarget)
     statTargetGUI()
  
