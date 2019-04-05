@@ -30,6 +30,11 @@ Example reports: [Reports](https://stattarget.github.io/docs/demo/)
 
 Binary Package: [statTarget2_WindowsOnly.zip](https://github.com/13479776/Picture/raw/master/statTarget_2.0.0.zip)
 
+### New features
+
+'ref.peaks' was implemented into QCRFSC for condisering the possibility of correlations of errors between features, as well as the batch effect. It is adaptable to small datasets with few quality control samples. See shiftCor function.
+
+
 ###  Citation
 
  Please cite the following article when using statTarget or QC-RFSC algorithm:
