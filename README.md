@@ -9,7 +9,7 @@
 ![GitHub release](https://img.shields.io/badge/releases-v%201.11.2-yellow.svg)
 ![GitHub release](https://img.shields.io/badge/downloads-top%2020%25-green.svg)
 ![GitHub release](https://img.shields.io/badge/Dependents-R%203.3.0%20-brightgreen.svg)
-![GitHub release](https://img.shields.io/badge/downloads > 11,000/total-brightgreen.svg)
+![GitHub release](https://img.shields.io/badge/downloads->11000/total-brightgreen.svg)
 
 
 
