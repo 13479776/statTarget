@@ -1,0 +1,44 @@
+---
+title: 'pathway analysis (mummichog)'
+author: "Hemi Luan"
+date: "Modified: 2019. Compiled: `r format(Sys.Date(), '%d %b %Y')`"
+output: 
+  BiocStyle::html_document:
+    toc: true
+       
+vignette: >
+  %\VignetteIndexEntry{statTarget2 for pathway analysis }
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+```
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+
+ 
+# statTarget result for pathway analysis using mummichog approach.
+
+## Pathways analysis by using MS peaks with accurate mass 
+
+
+1. to get the p.value from the file in /statTarget/statAnalysis/Univariate/Pvalues
+  
+
+2. to get the fold.change from the file in /statTarget/statAnalysis/Univariate/Fold_Changes
+  
+
+3. to get the m.z from the .tsv file from the xcms output.
+  
+
+4. to use the EXCEL for generation the ".txt" format with `column named m.z, p.value and t.score (fold.change value)`
+  
+
+submit the table to MS to pathway analysis panel in metaboanalyst web: https://www.metaboanalyst.ca/MetaboAnalyst/faces/upload/PeakUploadView.xhtml
+  
+

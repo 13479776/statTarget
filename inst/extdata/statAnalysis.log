@@ -1,0 +1,91 @@
+
+
+statTarget: statistical analysis start... Time:  Tue Feb 19 11:54:51 2019 
+
+* Step 1: Evaluation of missing value... 
+
+ Data Link 
+ statFile: /Users/Hees/Documents/software/svn/statTarget/inst/extdata/data_example.csv 
+
+ The number of missing value in Data Profile:  1
+ The number of filtered variables using the modified  80 % rule :   0 
+
+* Step 2: Summary statistics start... Time:  Tue Feb 19 11:54:51 2019 
+
+* Step 3: Missing value imputation start... Time:  Tue Feb 19 11:54:51 2019 
+
+ Imputation method was set at KNN
+ The number of NA value after imputation: 0
+ Imputation Finished! 
+
+ * Step 4: Normalization start... Time:  Tue Feb 19 11:54:51 2019 
+
+ Normalization method was set at NONE 
+
+* Step 5: Glog PCA-PLSDA start... Time:  Tue Feb 19 11:54:51 2019 
+
+ Scaling method was set at Center 
+
+ PCA Model Summary
+ 19 samples x 6 variables
+ Variance Explained of PCA Model:  
+
+                             PC1       PC2       PC3        PC4        PC5
+Standard deviation     0.6888731 0.4162343 0.2132925 0.08457386 0.01077031
+Proportion of Variance 0.6773500 0.2472900 0.0649400 0.01021000 0.00017000
+Cumulative Proportion  0.6773500 0.9246400 0.9895700 0.99978000 0.99995000
+
+ The following observations are calculated as outliers: [1] "80"
+
+ PLS(-DA) Two Component Model Summary
+ 19 samples x 6 variables
+ Fit method: oscorespls
+ Number of components considered: 2
+ Cross-validated using 19 leave-one-out segments. 
+
+ Cumulative Proportion of Variance Explained: R2X(cum) = 89.54889%
+ Cumulative Proportion of Response(s): 
+
+                  Y1          Y2
+R2Y(cum)  0.20546465  0.20546465
+Q2Y(cum) -0.05311848 -0.05311848
+
+ Permutation of PLSDA Model START...! 
+  |                                                                                   |                                                                           |   0%  |                                                                                   |====                                                                       |   5%  |                                                                                   |========                                                                   |  10%  |                                                                                   |===========                                                                |  15%  |                                                                                   |===============                                                            |  20%  |                                                                                   |===================                                                        |  25%  |                                                                                   |======================                                                     |  30%  |                                                                                   |==========================                                                 |  35%  |                                                                                   |==============================                                             |  40%  |                                                                                   |==================================                                         |  45%  |                                                                                   |======================================                                     |  50%  |                                                                                   |=========================================                                  |  55%  |                                                                                   |=============================================                              |  60%  |                                                                                   |=================================================                          |  65%  |                                                                                   |====================================================                       |  70%  |                                                                                   |========================================================                   |  75%  |                                                                                   |============================================================               |  80%  |                                                                                   |================================================================           |  85%  |                                                                                   |====================================================================       |  90%  |                                                                                   |=======================================================================    |  95%  |                                                                                   |===========================================================================| 100%
+
+* Step 6: Glog Random Forest start... Time:  Tue Feb 19 11:54:51 2019 
+
+  |                                                                                   |                                                                           |   0%  |                                                                                   |====                                                                       |   5%  |                                                                                   |========                                                                   |  10%  |                                                                                   |===========                                                                |  15%  |                                                                                   |===============                                                            |  20%  |                                                                                   |===================                                                        |  25%  |                                                                                   |======================                                                     |  30%  |                                                                                   |==========================                                                 |  35%  |                                                                                   |==============================                                             |  40%  |                                                                                   |==================================                                         |  45%  |                                                                                   |======================================                                     |  50%  |                                                                                   |=========================================                                  |  55%  |                                                                                   |=============================================                              |  60%  |                                                                                   |=================================================                          |  65%  |                                                                                   |====================================================                       |  70%  |                                                                                   |========================================================                   |  75%  |                                                                                   |============================================================               |  80%  |                                                                                   |================================================================           |  85%  |                                                                                   |====================================================================       |  90%  |                                                                                   |=======================================================================    |  95%  |                                                                                   |===========================================================================| 100%
+
+ Random Forest Model
+ Type:  classification
+ ntree: 500
+ mtry:  2
+ OOB estimate of error rate: 36.84 % 
+
+ Permutation-based Gini importance measures
+ The number of permutations:  20
+ Selected 5 variables with top importance 
+
+          1    2    3    4    5   
+giniImp   "X6" "X5" "X4" "X1" "X2"
+pvalueImp "X6" "X5" "X1" "X4" "X2"
+
+* Step 7: Univariate Test Start...! Time:  Tue Feb 19 11:54:52 2019 
+
+ P-value Calculating...
+ P-value was adjusted using Benjamini-Hochberg Method
+
+ Odd.Ratio Calculating... 
+
+ ROC Calculating... 
+
+ Volcano Plot Output... 
+
+ Output Link: /Users/Hees/Documents/software/svn/statTarget/inst/extdata/statTarget/statAnalysis 
+
+ Statistical Analysis Finished! Time:  Tue Feb 19 11:54:52 2019 
+
+ #################################### 
+ # Software Version: statTarget 2.0 # 
+ #################################### 

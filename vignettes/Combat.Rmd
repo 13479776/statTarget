@@ -1,0 +1,148 @@
+---
+title: 'QC-free approach with Combat method'
+author: "Hemi Luan"
+date: "Modified: 5 Dec 2017. Compiled: `r format(Sys.Date(), '%d %b %Y')`"
+output: 
+  BiocStyle::html_document:
+    toc: true
+       
+vignette: >
+  %\VignetteIndexEntry{QC_free approach with Combat method}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+```
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+### Combat
+'ComBat' allows users to adjust for batch effects in datasets where the batch covariate is known, using methodology described in Johnson et al. 2007. It uses either parametric or non-parametric empirical Bayes frameworks for adjusting data for batch effects.  Users are returned an expression matrix that has been corrected for batch effects.The function was revised accroding to 'sva' package (version = "3.8").
+
+
+### statTargetGUI 
+
+```
+## Examples Code for graphical user interface 
+
+library(statTarget)
+
+statTargetGUI()
+
+#For mac PC,  the GUI function 'statTargetGUI()' need the XQuartz instead of X11 support. Download it from https://www.xquartz.org. R 3.3.0 and RGtk2 2.20.31 are recommended for RGtk2 installation.
+
+```
+
+
+`statTargetGUI`
+
+
+
+Download the [Reference manual](https://github.com/13479776/Picture/blob/master/statTarget-manual.pdf) and [example data](https://github.com/13479776/Picture/raw/master/Data_example.zip) .
+
+
+
+
+### Running Signal Correction (the shiftCor function) from the GUI
+
+
+`Meta File`
+  
+  
+  Meta information includes the Sample name, class, batch and order. 
+  Do not change the name of each column
+  
+  (1) Class: The group of samples. QC samples is not required, but the class should be available (no 'NA').
+ 
+  (2) Order: The concent can be replaced by covariates if the mod.covariates (See shiftCor_dQC function) is TRUE.
+  
+  (3) Batch: The analysis blocks or batches
+  
+  (4) Sample name should be consistent in Meta file and Profile file
+  
+  (See the example data)
+
+
+`Profile File`
+
+
+Expression data includes the sample name and expression
+data.(See the example data)
+
+
+`NA.Filter`
+
+
+Modified n precent rule function. A variable will be kept if it has a non-zero value for at least n precent of samples in any one group. (Default: 0.8)  
+ 
+
+`MLmethod`
+ 
+
+ The QC-based signal correction (i.e. QC-RFSC, QC-RLSC.) or QC-free methods (Combat) 
+ 
+
+`Ntree`
+	
+	
+Number of trees to grow for QC-RFSC (Default: 500) .
+
+
+`QCspan`
+
+
+The smoothing parameter for QCRLSC which controls the bias-variance tradeoff. 
+The common range of QCspan value is from 0.5 to 0.75. If you choose
+a span that is too small then there will be a large variance. 
+If the span is too large, a large bias will be produced. 
+The default value of QCspan is set at '0', the generalised 
+cross-validation will be performed for choosing a good value, 
+avoiding overfitting of the observed data. (Default: 0) 
+
+
+
+`Imputation`
+
+
+ The parameter for imputation method.(i.e., 
+ nearest neighbor averaging, "KNN"; minimum values, "min"; Half of minimum values 
+"minHalf" median values, "median". (Default: KNN) 
+
+
+
+```
+## Examples Code
+
+library(statTarget)
+
+datpath <- system.file('extdata',package = 'statTarget')
+samPeno <- paste(datpath,'MTBLS79_sampleList.csv', sep='/')
+samFile <- paste(datpath,'MTBLS79.csv', sep='/')
+# Combat for QC-free datasets
+samPeno2 <- paste(datpath,'MTBLS79_dQC_sampleList.csv', sep='/')
+shiftCor_dQC(samPeno2,samFile, Frule = 0.8, MLmethod = "Combat")
+
+See ?shiftCor_dQC for off-line help
+```
+
+
+ 
+## References
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal drift correction and interpretations of quantitative mass spectrometry-based omics data. Analytica Chimica Acta. dio: https://doi.org/10.1016/j.aca.2018.08.002
+ 
+Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: https://doi.org/10.1101/253583
+
+Dunn, W.B., et al.,Procedures for large-scale metabolic profiling of
+serum and plasma using gas chromatography and liquid chromatography coupled 
+to mass spectrometry. Nature Protocols 2011, 6, 1060.
+
+Luan H., LC-MS-Based Urinary Metabolite Signatures in Idiopathic 
+Parkinson's Disease. J Proteome Res., 2015, 14,467.
+
+Luan H., Non-targeted metabolomics and lipidomics LC-MS data 
+from maternal plasma of 180 healthy pregnant women. GigaScience 2015 4:16

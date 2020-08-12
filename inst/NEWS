@@ -1,0 +1,60 @@
+
+CHANGES IN VERSION 1.19.1
+----------------------------------
+
++ To fixed bugs for coCV function
+
+CHANGES IN VERSION 1.17.3
+----------------------------------
+
++ shiftCor-coCV was added as the cutoff value (0-100) of CV for controlling the number of features.
++ To fixed bugs for skiping the roc analysis once the number of samples in any groups was less than 5.
+
+CHANGES IN VERSION 1.17.2
+----------------------------------
+
++ Check and remove the missing values in pvalues for volcanoplot functions
+
+
+
+CHANGES IN VERSION 1.15.4
+----------------------------------
+
++ edit colum name for the result table 
++ skip the roc analysis once the number of samples in any groups was less than 5.
+
+CHANGES IN VERSION 1.15.3
+----------------------------------
+
++ odds.ratio.  Add the ratio of the odds of an event occurring in one group (A) to the odds of it occurring in reference group (B), such as odds_of_AtoB.
+
+
+CHANGES IN VERSION 1.13.7
+----------------------------------
+
++ Results of Volcano plot (add the log2(FC) and -log10(p.adjust) values)
+
+
+CHANGES IN VERSION 2.0
+------------------------
+
+NEW FEATURES
+    
+    + New GUI
+    o Mouse Hover for help information
+    o .log file
+    
+    + New Signal correction
+    o Combat for QC-free Signal correction
+    o QC-RFSC methods for metabolomics and proteomics data
+    
+    
+    + New feature slection
+    o Random Forest and the Permutation based variable importance measures
+    o new MDSplot for Random Forest
+    o P-value based importance plot
+    
+    + New data preprocessing 
+    o PQN/SUM/none normalization
+    o center/none Scaling method
+

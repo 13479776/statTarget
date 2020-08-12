@@ -1,0 +1,11 @@
+library(testthat)
+library(statTarget)
+#library(statTarget)
+datpath <- system.file("extdata",package = "statTarget")
+samPeno <- paste(datpath,"MTBLS79_sampleList.csv", sep="/")
+samFile <- paste(datpath,"MTBLS79.csv", sep="/")
+file <- paste(datpath,"data_example_two_groups.csv", sep="/")
+#statAnalysis(file, Frule = 0.8,imputeM = "KNN", glog = TRUE, test.multi=TRUE, nvarRF =10, scaling = "Pareto",silt = 500, pcax = 1, pcay = 2) 
+shiftCor(samPeno,samFile,Frule = 0.8,QCspan = 0.75, degree = 2,imputeM = "KNN")
+
+#test_check("statTarget")
