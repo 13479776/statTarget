@@ -58,7 +58,7 @@ Binary Package: [statTarget2_WindowsOnly.zip](https://github.com/13479776/Pictur
 
     if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-    BiocManager::install("statTarget", version = "3.10") 
+    BiocManager::install("statTarget", version = "devel") 
     library(statTarget)
     statTargetGUI()
  
