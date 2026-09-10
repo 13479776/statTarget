@@ -28,7 +28,6 @@ Demo data: [Data](https://stattarget.github.io/docs/demo/)
 Example reports: [Reports](https://stattarget.github.io/docs/demo/)
 
 
-Binary Package: [statTarget2_WindowsOnly.zip](https://github.com/13479776/Picture/raw/master/statTarget_2.0.0.zip)
 
 
 ###  Citation
@@ -46,28 +45,6 @@ Binary Package: [statTarget2_WindowsOnly.zip](https://github.com/13479776/Pictur
 
 > If you did not install the R software yet,you can download R >= 3.3.0  from https://www.r-project.org
 
-
-### Installation
---------------------------------------------------------------------
-     
-> Install “statTarget2” at the Bioconductor
-
-    if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-    BiocManager::install("statTarget", version = "devel") 
-    library(statTarget)
-    statTargetGUI()
- 
-     
-> Install the version of "statTarget2" at Github. copy this code into R
-
-    library(devtools)
-    
-    devtools::install_github("statTarget/statTarget2")
-    
-    library(statTarget)
-    
-    statTargetGUI()
 
 
     
